@@ -1,5 +1,5 @@
 html {
-	font-family: "SF Pro", "Inter", "Helvetica", "Noto Sans SC", sans-serif;
+	font-family: "New York", "Lora", "Georgia", "Noto Serif SC", serif;
 }
 body {
 	max-width: 60rem;
@@ -10,7 +10,7 @@ header {
 	text-align: center;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: "New York", "Lora", "Georgia", "Noto Serif SC", serif;
+	font-family: "SF Pro", "Inter", "Helvetica", "Noto Sans SC", sans-serif;
 }
 h2 {
 	padding-top: 1.2rem;
