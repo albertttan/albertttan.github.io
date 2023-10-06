@@ -1,16 +1,24 @@
+@font-face {
+	font-family: "Inter";
+	font-weight: 400;
+	src: url("Inter-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Inter";
+	font-weight: 700;
+	src: url("Inter-Bold.woff") format("truetype");
+}
 html {
-	font-family: "New York", "Lora", "Georgia", "Noto Serif SC", serif;
+	font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Inter", sans-serif;
 }
 body {
 	max-width: 60rem;
 	margin: auto;
 	padding: 1rem;
+	line-height: 1.3;
 }
 header {
 	text-align: center;
-}
-h1, h2, h3, h4, h5, h6 {
-	font-family: "SF Pro", "Inter", "Helvetica", "Noto Sans SC", sans-serif;
 }
 h2 {
 	padding-top: 1.2rem;
@@ -62,11 +70,12 @@ blockquote {
 	padding-left: 10px;
 }
 pre {
-	font-family: "SF Mono", "Menlo", "Consolas", monospace;
 	background-color: rgb(240, 240, 240);
 	padding: 10px 10px;
 }
 code, kbd, var {
+	font-family: "SF Mono", "Menlo", "Consolas", monospace;
+	font-size: smaller;
 	background-color: rgb(240, 240, 240);
 }
 cite {
