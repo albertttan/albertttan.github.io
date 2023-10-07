@@ -4,6 +4,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Help Doc for Editors</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap">
 	<link rel="stylesheet" href="files/styles.css">
 	<style>
 		li.ps {
@@ -32,6 +35,9 @@
 			</li>
 			<li>
 				<span class="verb">Know</span> <strong>Python</strong>. Python is a popular programming language. In this project, Python scripts are used to generate most of the HTML codes. With such knowledge, you know what to do when you need to alter the auto-generated parts. You can learn Python with <a href="https://docs.python.org/3/">Python Docs</a> <span class="ps">and IGCSE Computer Science</span>.
+			</li>
+			<li>
+				<span class="verb">Know</span> <strong>Git</strong>. Git is a version control system for software development. Our website is based on GitHub, which relies on Git for updates. With such knowledge, you know what to do update the website every day. You can get to know Git with <a href="https://docs.github.com/en/">GitHub Docs</a>.
 			</li>
 			<li>
 				<span class="verb">Know</span> important <strong>Python libraries</strong>, including but not limited to <code>re</code>, <code>os</code>, <code>datetime</code>, <code>PyPDF2</code>, and <code>BeautifulSoup</code>. They are utilized in many of the Python scripts, and you might need to understand their logic.
@@ -76,7 +82,10 @@
 		<p>This section gives you an outline and a check-list of what you should try do so that you can start to run the programs. The first steps should be easy, but some could be if you have little programming experience. If you encounter any problems, consult ChatGPT or any tech person around you.</p>
 		<ul>
 			<li>
-				<span class="verb">Download</span> the <strong>source files</strong> of the Daily Bulletin.
+				<span class="verb">Clone</span> the <strong>repository</strong> of the Daily Bulletin. <span class="verb">Run</span> the command <code>git clone https://github.com/albertttan/albertttan.github.io.git</code> in Terminal.
+			</li>
+			<li>
+				<span class="verb">Download</span> other <strong>source files</strong> of the Daily Bulletin, including the various Python scripts.
 			</li>
 			<li>
 				<span class="verb">Download</span> and <span class="verb">install</span> a <strong>web browser</strong>. <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a> is a personal recommendation, but any relatively modern browser <span class="ps">i.e. not IE</span> like Chrome, Safari and Edge should do.
@@ -398,7 +407,7 @@
 						<span class="verb">Edit</span> <code>daily_inspiration/{next-day}.html</code>: <span class="verb">link</span> the <code>src</code> of the <code>&lt;img&gt;</code> element to <code>files/[picture]_compressed.jpeg</code>.
 					</li>
 					<li>
-						<span class="verb">Upload</span> <code>files/[picture]_compressed.jpeg</code> to the server.
+						<span class="verb">Copy</span> <code>files/[picture]_compressed.jpeg</code> to the Git repository.
 					</li>
 				</ul>
 			</li>
@@ -499,7 +508,7 @@
 						<span class="verb">Run</span> <code>pack.py</code>.
 					</li>
 					<li class="ps">
-						This should always be the last script you run every day. Run this script once you made any changes to <code>html/{next-day}.html</code>, manual or automatic. This script packs your HTML into an email message and uploads your HTML to the server.
+						This should always be the last script you run every day. Run this script once you made any changes to <code>html/{next-day}.html</code>, manual or automatic. This script packs your HTML into an email message, copies your HTML to the Git repository, and pushes your changes. You need a token for your first push to the git repository, but then the script will work fine.
 					</li>
 				</ul>
 			</li>
@@ -522,7 +531,7 @@
 		<p>Congratulations! You've done your job. Sleep well!</p>
 	</article>
 	<footer>
-		<p><a href="../daily-bulletin/">Home Page</a> · <a href="archive.html">Archive</a> · <a href="mailto:s22505@ykpaoschool.cn">Contact</a></p>
+		<p><a href="./">Home Page</a> · <a href="archive.html">Archive</a> · <a href="mailto:s22505@ykpaoschool.cn">Contact</a></p>
 	</footer>
 </body>
 </html>
