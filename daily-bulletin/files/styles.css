@@ -89,6 +89,9 @@ img.embed {
 	margin-left: 10px; 
 	margin-bottom: 10px; 
 }
+hr {
+	border: 1px solid rgb(150, 150, 150);
+}
 footer {
 	padding-top: 1rem;
 	text-align: center;
