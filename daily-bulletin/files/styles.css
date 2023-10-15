@@ -74,9 +74,17 @@ th {
 	background-color: rgb(240, 240, 240);
 }
 blockquote {
-	font-size: 105%;
-	border-left: 2px solid rgb(180, 180, 180);
-	padding-left: 10px;
+	position: relative;
+	margin-left: 40px;
+}
+blockquote:before {
+	content: "";
+	position: absolute;
+	left: -14px;
+	top: 0;
+	bottom: 0;
+	width: 2px;
+	background-color: rgb(180, 180, 180);
 }
 pre {
 	background-color: rgb(240, 240, 240);
