@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Current Time</title>
+	<style>
+		html {
+			font-family: "SF Mono", "Menlo", "Consolas", monospace;
+		}
+		body {
+			text-align: center;
+			max-width: 60rem;
+			margin: auto;
+			padding: 1rem;
+		}
+		#time {
+			font-weight: bold;
+			font-size: 1000%;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		#button {
+			font-size: 150%;
+			position: fixed;
+			top: 0.5em;
+			left: 0.5em;
+			width: 1em;
+			height: 1em;
+		}
+	</style>
+</head>
+<body>
+	<div id="button">
+		<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1024 1024">
+			<title>Full Screen</title>
+				<path d="M224 128C209.944 128 196.625 131.072 184.594 136.5C163.275 146.118 146.118 163.275 136.5 184.594C131.072 196.625 128 209.944 128 224L128 412L196 412L196 261.656C196 256.26 196.71 251.049 197.938 246.031C203.731 222.345 222.345 203.731 246.031 197.938C251.049 196.71 256.26 196 261.656 196L412 196L412 128L224 128Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>
+				<path d="M128 612L128 800C128 814.056 131.072 827.375 136.5 839.406C146.118 860.725 163.275 877.882 184.594 887.5C196.625 892.928 209.944 896 224 896L412 896L412 828L261.656 828C256.26 828 251.049 827.29 246.031 826.062C222.345 820.269 203.731 801.655 197.938 777.969C196.71 772.951 196 767.74 196 762.344L196 612L128 612Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>
+				<path d="M828 612L828 762.344C828 767.74 827.29 772.951 826.062 777.969C820.269 801.655 801.655 820.269 777.969 826.062C772.951 827.29 767.74 828 762.344 828L612 828L612 896L800 896C814.056 896 827.375 892.928 839.406 887.5C860.725 877.882 877.882 860.725 887.5 839.406C892.928 827.375 896 814.056 896 800L896 612L828 612Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>
+				<path d="M612 128L612 196L762.344 196C767.74 196 772.951 196.71 777.969 197.938C801.655 203.731 820.269 222.345 826.062 246.031C827.29 251.049 828 256.26 828 261.656L828 412L896 412L896 224C896 209.944 892.928 196.625 887.5 184.594C877.882 163.275 860.725 146.118 839.406 136.5C827.375 131.072 814.056 128 800 128L612 128Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>
+		</svg>
+	</div>
+
+	<div id="time"></div>
+
+	<script>
+		var button = document.getElementById("button");
+		var isFullScreen = false;
+
+		function toggleFullScreen() {
+			if (!isFullScreen) {
+				if (document.documentElement.requestFullscreen) {
+					document.documentElement.requestFullscreen();
+				} else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
+					document.documentElement.mozRequestFullScreen();
+				} else if (document.documentElement.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+					document.documentElement.webkitRequestFullscreen();
+				} else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
+					document.documentElement.msRequestFullscreen();
+				}
+				button.innerHTML = getLeaveFullScreenSVG();
+			} else {
+				if (document.exitFullscreen) {
+					document.exitFullscreen();
+				} else if (document.mozCancelFullScreen) { /* Firefox */
+					document.mozCancelFullScreen();
+				} else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+					document.webkitExitFullscreen();
+				} else if (document.msExitFullscreen) { /* IE/Edge */
+					document.msExitFullscreen();
+				}
+				button.innerHTML = getEnterFullScreenSVG();
+			}
+			isFullScreen = !isFullScreen;
+		}
+
+		function getEnterFullScreenSVG() {
+			return '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1024 1024">' +
+				'<title>Full Screen</title>' +
+				'<path d="M224 128C209.944 128 196.625 131.072 184.594 136.5C163.275 146.118 146.118 163.275 136.5 184.594C131.072 196.625 128 209.944 128 224L128 412L196 412L196 261.656C196 256.26 196.71 251.049 197.938 246.031C203.731 222.345 222.345 203.731 246.031 197.938C251.049 196.71 256.26 196 261.656 196L412 196L412 128L224 128Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>' +
+				'<path d="M128 612L128 800C128 814.056 131.072 827.375 136.5 839.406C146.118 860.725 163.275 877.882 184.594 887.5C196.625 892.928 209.944 896 224 896L412 896L412 828L261.656 828C256.26 828 251.049 827.29 246.031 826.062C222.345 820.269 203.731 801.655 197.938 777.969C196.71 772.951 196 767.74 196 762.344L196 612L128 612Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>' +
+				'<path d="M828 612L828 762.344C828 767.74 827.29 772.951 826.062 777.969C820.269 801.655 801.655 820.269 777.969 826.062C772.951 827.29 767.74 828 762.344 828L612 828L612 896L800 896C814.056 896 827.375 892.928 839.406 887.5C860.725 877.882 877.882 860.725 887.5 839.406C892.928 827.375 896 814.056 896 800L896 612L828 612Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>' +
+				'<path d="M612 128L612 196L762.344 196C767.74 196 772.951 196.71 777.969 197.938C801.655 203.731 820.269 222.345 826.062 246.031C827.29 251.049 828 256.26 828 261.656L828 412L896 412L896 224C896 209.944 892.928 196.625 887.5 184.594C877.882 163.275 860.725 146.118 839.406 136.5C827.375 131.072 814.056 128 800 128L612 128Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>' +
+				'</svg>';
+		}
+
+		function getLeaveFullScreenSVG() {
+			return '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1024 1024">' +
+				'<title>Full Screen</title>' +
+				'<path d="M316 412C330.056 412 343.375 408.928 355.406 403.5C376.725 393.882 393.882 376.725 403.5 355.406C408.928 343.375 412 330.056 412 316L412 128L344 128L344 278.344C344 283.74 343.29 288.951 342.062 293.969C336.269 317.655 317.655 336.269 293.969 342.062C288.951 343.29 283.74 344 278.344 344L128 344L128 412L316 412Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>' +
+				'<path d="M412 896L412 708C412 693.944 408.928 680.625 403.5 668.594C393.882 647.275 376.725 630.118 355.406 620.5C343.375 615.072 330.056 612 316 612L128 612L128 680L278.344 680C283.74 680 288.951 680.71 293.969 681.938C317.655 687.731 336.269 706.345 342.062 730.031C343.29 735.049 344 740.26 344 745.656L344 896L412 896Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>' +
+				'<path d="M680 896L680 745.656C680 740.26 680.71 735.049 681.938 730.031C687.731 706.345 706.345 687.731 730.031 681.938C735.049 680.71 740.26 680 745.656 680L896 680L896 612L708 612C693.944 612 680.625 615.072 668.594 620.5C647.275 630.118 630.118 647.275 620.5 668.594C615.072 680.625 612 693.944 612 708L612 896L680 896Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>' +
+				'<path d="M896 412L896 344L745.656 344C740.26 344 735.049 343.29 730.031 342.062C706.345 336.269 687.731 317.655 681.938 293.969C680.71 288.951 680 283.74 680 278.344L680 128L612 128L612 316C612 330.056 615.072 343.375 620.5 355.406C630.118 376.725 647.275 393.882 668.594 403.5C680.625 408.928 693.944 412 708 412L896 412Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>' +
+				'</svg>';
+		}
+
+		button.addEventListener("click", toggleFullScreen);
+
+		
+		function updateTime() {
+			var date = new Date();
+			var hours = date.getHours();
+			var minutes = date.getMinutes();
+			var seconds = date.getSeconds();
+
+			hours = hours < 10 ? "0" + hours : hours;
+			minutes = minutes < 10 ? "0" + minutes : minutes;
+			seconds = seconds < 10 ? "0" + seconds : seconds;
+
+			var time = hours + ":" + minutes + ":" + seconds;
+			var formattedTime = hours + "<br>" + minutes + "<br>" + seconds;
+
+			document.getElementById("time").innerHTML = window.innerWidth >= 1000 ? time : formattedTime;
+		}
+
+		updateTime();
+		setInterval(updateTime, 1);
+	</script>
+</body>
+</html>
