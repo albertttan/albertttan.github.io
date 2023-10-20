@@ -110,7 +110,11 @@
 			var time = hours + ":" + minutes + ":" + seconds;
 			var formattedTime = hours + "<br>" + minutes + "<br>" + seconds;
 
-			document.getElementById("time").innerHTML = window.innerWidth >= 960 ? time : formattedTime;
+			if (window.innerWidth >= (1.2 * window.innerHeight)) {
+				document.getElementById("time").innerHTML = time;
+			} else {
+				document.getElementById("time").innerHTML = formattedTime;
+			}
 		}
 
 		updateTime();
