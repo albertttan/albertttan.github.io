@@ -41,7 +41,7 @@ span.location {
 time {
 	text-decoration: underline;
 }
-a {
+a:link, a:visited, a:hover, a:active {
 	color: rgb(20, 120, 20);
 }
 table {
@@ -104,7 +104,7 @@ p.ps {
 	font-size: 90%;
  	color: rgb(150, 150, 150);
 }
-span.ps {
+.ps {
 	color: rgb(150, 150, 150);
 }
 img {
