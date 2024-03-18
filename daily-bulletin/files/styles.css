@@ -107,7 +107,7 @@ p.ps {
 .ps {
 	color: rgb(150, 150, 150);
 }
-.serif {
+.serif, math {
 	font-family: "New York", "Baskerville", "Noto Serif SC", serif;
 }
 img {
