@@ -120,10 +120,39 @@ img.embed {
 	margin-left: 10px; 
 	margin-bottom: 10px; 
 }
+img.link {
+	height: 80px;
+	width: 80px;
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+div.link {
+	background-color: rgb(240, 240, 240);
+	height: 100px;
+}
+h1.link {
+	padding-top: 20px;
+	height: 35px;
+	margin-bottom: 5px;
+}
+p.link {
+	font-size: 90%;
+ 	color: rgb(150, 150, 150);
+ 	margin-top: 0px;
+ 	height: 20px;
+	padding-bottom: 25px;
+}
 hr {
 	border: 1px solid rgb(150, 150, 150);
 }
 footer {
 	padding-top: 1rem;
 	text-align: center;
+}
+@media only screen and (max-width: 700px) {
+	.link p {
+		display: none;
+	}
 }
