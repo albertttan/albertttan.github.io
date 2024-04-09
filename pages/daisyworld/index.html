@@ -5,20 +5,31 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../../daily-bulletin/files/styles.css">
 	<title>Daisyworld</title>
+	<style>
+td.left {
+	text-align: left;
+}
+	</style>
 </head>
 <body>
 <header>
 	<h1>Daisyworld Simulation</h1>
+	<p>Albert Tan</p>
 </header>
 <article>
 	<h2>Introduction and Applications</h2>
+	<img class="embed" src="daisyworld-overview.webp" alt="Overview of Daisyworld" title="Overview of Daisyworld">
 	<p>Nuclear fusion in the sun causes its core to contract and heat up slightly as its helium content increases. As the result, energy production from the sun's core increases, energy emitted at the surface of the sun increases, and the sun appears brighter. In fact, when the Sun first formed 4.6 billion years ago, it should have been about 30% less luminous than it is today. This means that if all other factors had remained constant, the early Earth should have been colder than it is today, being ice-covered prior to 2 billion years ago.</p>
 	<p>However, this isn't the case. Sedimentary rock evidences prove that liquid water has existed on Earth's surface for at least the last 3.8 billion years. This apparent discrepancy is called the "faint young Sun paradox." The most likely solution is that the level of greenhouse gases in Earth's primitive atmosphere was significantly higher; as solar luminosity gradually increases, the level of greenhouse gases gradually decreases, keeping the temperature of the earth in a rough equilibrium.</p> 
 	<p>Why should this have been true? What caused the change in greenhouse gas concentration? The Daisyworld is a hypothetical model to show how self-regulation and interaction between systems automatically created such long-term climate equilibrium on a planet, and how this equilibrium might eventually shatter when the external changes become too significant.</p>
+	<p>White daisies grow on the dark soil of Daisyworld. As we all know, brighter surfaces reflect more heat since they have a higher albedo (the proportion of the incident light or radiation that is reflected by a surface), and vice versa; if there are more daisies on the surface of Daisyworld, the temperature in Daisyworld will be lower.</p>
+	<p>The growth of daisies, however, is also controlled by temperature, like any other regular organism. There is an optimum temperature in which daisies grow at the fastest rate; as temperature moves away from the optimum temperature, the growth rate of daisies decrease, until at some point the planet is too cold or too hot to sustain any extra daisies.</p>
+	<p>The system seems quite fragile to disturbances at first glance: any significant change in daisy coverage would result in a significant change in temperature, and any significant change in temperature would result in a significant change in daisy coverage. In reality, these factors can manage to work together to keep the Daisyworld in an equilibrium for a relatively long period of time, just like how Earth managed to regulate itself for more than 4 billion years.</p>
+	<p>However, we will eventually observe the fall of the equilibrium as the forcing (persistent disturbance of a system), or the change in solar luminosity in this case, becomes too much. This outlines the potential threat faced by the Earth in the far future.</p>
 	<p class="ps">Unfortunately, this page is still not fully finished. Ms. Schenk, if you see this line, please contact me so that I can finish this page as soon as possible, hopefully within a day.</p>
+
 	<h2>Simulation</h2>
 	<h3>Variables</h3>
-	<!--
 	<table>
 		<thead>
 			<th scope="col">Variable</th>
@@ -28,32 +39,73 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td>T</td>
+				<td><code>maxt</code></td>
 				<td>100</td>
-				<td>million years</td>
-				<td>Length of the simulation</td>
+				<td>Billion Years</td>
+				<td class="left">Maximum time of the simulation. A higher value allows you to observe changes in Daisyworld for a longer time period.</td>
 			</tr>
 			<tr>
-				<td>s</td>
+				<td><code>side</code></td>
 				<td>360</td>
-				<td>pixels</td>
-				<td>Sidelength of Daisyworld</td>
+				<td>Pixels</td>
+				<td class="left">Sidelength of the planet of Daisyworld. A higher value means slower simulation but relatively more precise and reliable results.</td>
 			</tr>
 			<tr>
-				<td>a_d</td>
-				<td>0.9</td>
-				<td></td>
-				<td>Albedo of daisies</td>
+				<td><code>optm</code></td>
+				<td>290</td>
+				<td>Kelvins</td>
+				<td class="left">Optimum temperature of daisies, or the temperature at which the speed of daisy growth is at its fastest possible.</td>
 			</tr>
 			<tr>
-				<td>d</td>
-				<td>12</td>
-				<td></td>
-				<td>Magnitude of which the density of daisies inhibit daisy growth. A higher value means less irregular oscillations of daisy coverage during the simulation, so t A higher value also means less response of daisies to change of temperature in general, so the equilibrium will shift faster to the right and fall faster.</td>
+				<td><code>rnge</code></td>
+				<td>20</td>
+				<td>Kelvins</td>
+				<td class="left">Range of acceptable temperature of daisies, or the difference between maximum and minimum temperature that allows the survival of any daisies.</td>
+			</tr>
+			<tr>
+				<td><code>albd</code></td>
+				<td>70</td>
+				<td>%</td>
+				<td class="left">Albedo of the daisies, or percentage of incoming solar radiation reflected back to the universe by the white daisies.</td>
+			</tr>
+			<tr>
+				<td><code>albg</code></td>
+				<td>30</td>
+				<td>%</td>
+				<td class="left">Albedo of the ground, or percentage of incoming solar radiation reflected back to the universe by the gray soil.</td>
+			</tr>
+			<tr>
+				<td><code>lum0</code></td>
+				<td>335</td>
+				<td>Kelvins</td>
+				<td class="left">Initial solar luminosity, measured as the equivalent temperature the planet would have if it absorbed all the incoming radiation.</td>
+			</tr>
+			<tr>
+				<td><code>dlum</code></td>
+				<td>9</td>
+				<td>% per Billion Year</td>
+				<td class="left">Rate of increase of solar luminosity. A higher value speeds the simulation up.</td>
+			</tr>
+			<tr>
+				<td><code>brte</code></td>
+				<td>10</td>
+				<td>%</td>
+				<td class="left">Birth rate of daisies. If a pixel meets the requirement to become a new daisy, this is the chance that the daisy will spread to that pixel. A higher value means that daisies are more sensitive to temperature changes, which can also mean more irregular fluctuations in daisy coverage.</td>
+			</tr>
+			<tr>
+				<td><code>drte</code></td>
+				<td>10</td>
+				<td>%</td>
+				<td class="left">Death rate of daisies. If a pixel meets the requirement to become a pixel of gray soil again, this is the chance that the daisy will actually die. A higher value means that daisies are more sensitive to temperature changes, which can also mean more irregular fluctuations in daisy coverage.</td>
+			</tr>
+			<tr>
+				<td><code>rrte</code></td>
+				<td>5</td>
+				<td>%</td>
+				<td class="left">Random generation rate of daisies. If a pixel meets the requirement to grow a new daisy but does not have neighboring daisies, this is the chance that a daisy will randomly spawn. A higher value means that daisies are less sensitive to density.</td>
 			</tr>
 		</tbody>
 	</table>
-	-->
 	<h3>Functions</h3>
 	<h3>Process</h3>
 
@@ -61,6 +113,24 @@
 	<h3>Without the Daisies</h3>
 	<h3>Introduction of the Equilibrium</h3>
 	<h3>Fall of the Equilibrium</h3>
+
+	<h2>Help</h2>
+	<h3>Running the Program for the First Time</h3>
+	<p>If you do not know how to run the program, please follow the following steps, or perhaps Google "how to run a python code".</p>
+	<ol>
+		<li>Install Python from <a href="https://www.python.org/downloads/release/python-3112/">the official website</a> or <a href="https://brew.sh">Homebrew</a>.</li>
+		<li>Install the libraries with Terminal commands, including:
+			<ul>
+				<li>Tkinter (if Python is installed with Homebrew)</li>
+				<li>Python Image Library: <code>pip3 install Pillow</code></li>
+				<li>OpenCV: <code>pip3 install opencv-python</code></li>
+				<li>NumPy: <code>pip3 install numpy</code></li>
+				<li>Matplotlib: <code>pip3 install matplotlib</code></li>
+			</ul>
+		</li>
+		<li>Run the Terminal command to start the program: <code>python3 [drag daisyworld.py into the window]</code>
+	</ol>
+	<h3>Interface</h3>
 
 	<h2>Related Knowledge</h2>
 	<h3>Environmental Systems and Societies</h3>
