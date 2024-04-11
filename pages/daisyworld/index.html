@@ -9,6 +9,9 @@
 td.left {
 	text-align: left;
 }
+h1 {
+	color: rgb(0, 172, 240);
+}
 a:link, a:visited, a:hover, a:active {
 	color: rgb(0, 172, 240);
 }
@@ -150,10 +153,12 @@ a:link, a:visited, a:hover, a:active {
 
 	<h3>Modelling</h3>
 	<p>The daisy coverage can thus be simulated based on the variables and rules defined above. The program loops through consecutive rounds of 50 million years, \(t\), until \(T\) is reached, continuously calculating and recording the daisy coverage and temperature.</p>
-	<p>In each round, we first calculate the temperature \(\theta\). We first calculate the current solar luminosity measured in the equivalent temperature of the planet, \(l_t\), based on the last recorded luminosity, \(l_{t-1}\), and \(\Delta l\); next comes the current average albedo of the planet based on the daisy coverage in the last round, the albedo of the daisies, and the albedo of the ground. The temperature is equivalent luminosity when albedo is taken into account, or:</p>
-	\[l_t = l_{t-1} \Delta l\]
-	\[a_t = 1 - (a_d d_t - a_g (1 - d_t))\]
-	\[\theta_t = l_t a_t\]
+	<p>In each round, we first calculate the temperature \(\theta\) as what remains of the current solar luminosity, \(l_t\), after some radiation is reflected, the amount of which depends on the current average albedo, \(a_t\).</p>
+	<p>\[\theta_t = l_t (100\% - a_t)\]</p>
+	<p>The current solar luminosity measured in the equivalent temperature of the planet, \(l_t\), can be calculated based on the last recorded luminosity, \(l_{t-1}\), and \(\Delta l\). The current average albedo of the planet, \(a_t\), based on the daisy coverage in the last round \(d_{t-1}\), the albedo of the daisies \(a_d\), and the albedo of the ground \(a_g\).</p>
+	<p>\[l_t = l_{t-1} \Delta l\]
+	\[a_t = a_d d_{t-1} + a_g (100\% - d_{t-1})\]</p>
+	<p>We then iterate through each grid to determine whether 
 
 
 	<h2>Results</h2>
