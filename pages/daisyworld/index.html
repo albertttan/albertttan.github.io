@@ -9,7 +9,12 @@
 td.left {
 	text-align: left;
 }
+a:link, a:visited, a:hover, a:active {
+	color: rgb(0, 172, 240);
+}
 	</style>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 <header>
@@ -41,87 +46,120 @@ td.left {
 		</thead>
 		<tbody>
 			<tr>
-				<td><code>maxt</code></td>
+				<td>\(T\)<br><var>maxt</var></td>
 				<td>100</td>
 				<td>Billion Years</td>
 				<td class="left">Maximum time of the simulation. A higher value allows you to observe changes in Daisyworld for a longer time period.</td>
 			</tr>
 			<tr>
-				<td><code>side</code></td>
+				<td>\(s\)<br><var>side</var></td>
 				<td>360</td>
 				<td>Pixels</td>
 				<td class="left">Sidelength of the planet of Daisyworld. A higher value means slower simulation but relatively more precise and reliable results.</td>
 			</tr>
 			<tr>
-				<td><code>optm</code></td>
+				<td>\(\theta_O\)<br><var>optm</var></td>
 				<td>290</td>
 				<td>Kelvins</td>
 				<td class="left">Optimum temperature of daisies, or the temperature at which the speed of daisy growth is at its fastest possible.</td>
 			</tr>
 			<tr>
-				<td><code>rnge</code></td>
+				<td>\(\theta_\max - \theta_\min\)<br><var>rnge</var></td>
 				<td>20</td>
 				<td>Kelvins</td>
 				<td class="left">Range of acceptable temperature of daisies, or the difference between maximum and minimum temperature that allows the survival of any daisies.</td>
 			</tr>
 			<tr>
-				<td><code>albd</code></td>
+				<td>\(a_d\)<br><var>albd</var></td>
 				<td>70</td>
 				<td>%</td>
 				<td class="left">Albedo of the daisies, or percentage of incoming solar radiation reflected back to the universe by the white daisies.</td>
 			</tr>
 			<tr>
-				<td><code>albg</code></td>
+				<td>\(a_g\)<br><var>albg</var></td>
 				<td>30</td>
 				<td>%</td>
 				<td class="left">Albedo of the ground, or percentage of incoming solar radiation reflected back to the universe by the gray soil.</td>
 			</tr>
 			<tr>
-				<td><code>lum0</code></td>
+				<td>\(l_0\)<br><var>lum0</var></td>
 				<td>335</td>
 				<td>Kelvins</td>
 				<td class="left">Initial solar luminosity, measured as the equivalent temperature the planet would have if it absorbed all the incoming radiation.</td>
 			</tr>
 			<tr>
-				<td><code>dlum</code></td>
+				<td>\(\Delta l\)<br><var>dlum</var></td>
 				<td>9</td>
 				<td>% per Billion&nbsp;Year</td>
 				<td class="left">Rate of increase of solar luminosity. A higher value speeds the simulation up.</td>
 			</tr>
 			<tr>
-				<td><code>brte</code></td>
+				<td>\(B\)<br><var>brte</var></td>
 				<td>10</td>
 				<td>%</td>
 				<td class="left">Birth rate of daisies. If a pixel meets the requirement to become a new daisy, this is the chance that the daisy will spread to that pixel. A higher value means that daisies are more sensitive to temperature changes, which can also mean more irregular fluctuations in daisy coverage.</td>
 			</tr>
 			<tr>
-				<td><code>drte</code></td>
+				<td>\(D\)<br><var>drte</var></td>
 				<td>10</td>
 				<td>%</td>
 				<td class="left">Death rate of daisies. If a pixel meets the requirement to become a pixel of gray soil again, this is the chance that the daisy will actually die. A higher value means that daisies are more sensitive to temperature changes, which can also mean more irregular fluctuations in daisy coverage.</td>
 			</tr>
 			<tr>
-				<td><code>rrte</code></td>
+				<td>\(R\)<br><var>rrte</var></td>
 				<td>5</td>
 				<td>%</td>
 				<td class="left">Random generation rate of daisies. If a pixel meets the requirement to grow a new daisy but does not have neighboring daisies, this is the chance that a daisy will randomly spawn. A higher value means that daisies are less sensitive to density.</td>
 			</tr>
+			<tr>
+				<td>\(t\)</td>
+				<td>(varies)</td>
+				<td>50 Million Years</td>
+				<td class="left">Round of simulation</td>
+			</tr>
+			<tr>
+				<td>\(\theta_t\)</td>
+				<td>(varies)</td>
+				<td>Kelvins</td>
+				<td class="left">Temperature in Daisyworld in round (\t\)</td>
+			</tr>
+			<tr>
+				<td>\(l_t\)</td>
+				<td>(varies)</td>
+				<td>Kelvins</td>
+				<td class="left">Kelvin equivalent of solar luminosity in round (\t\)</td>
+			</tr>
+			<tr>
+				<td>\(d_t\)</td>
+				<td>(varies)</td>
+				<td>%</td>
+				<td class="left">Daisy coverage in round (\t\)</td>
+			</tr>
 		</tbody>
 	</table>
-	<p>The table offers an overview of key variables that determine the outcomes of the simulation. They can be adjusted through the "Settings" interface, allowing you to explore different outcomes of Daisyworld under different conditions.</p>
+	<p>The table offers an overview of key variables that determine the outcomes of the simulation. Some can be adjusted through the "Settings" interface, allowing you to explore different outcomes of Daisyworld under different conditions.</p>
 
 	<h3>Functions and Graphs</h3>
 	<img class="embed" src="daisyworld-graphs.webp" alt="Graphs for Daisyworld" title="Graphs for Daisyworld">
 	<p>The rate of growth of daisies at a time is determined by the temperature. Two functions illustrate the relations.</p>
 	<p>The control of temperature on the growth of daisies is roughly a quadratic relation. The vertex shows the optimum temperature and the respective growth rate, and the x-intercepts show the points where the planet is too cold or too hot to sustain any extra daisies.</p>
 	<p>The control of daisy coverage on temperature, meanwhile, is linear. The higher the daisy coverage, the higher the average albedo, the greater the percentage of solar radiation reflected from the surface, the lower the temperature of the planet.</p>
-	<p>If we graph the inverse of the linear function along with the quadratic function like in <u>Graph (a)</u>, we can observe two intersections, P<sub>1</sub> and P<sub>2</sub>. These points of intersection are special because they represent the only states of the system that simultaneously fall on the curves showing both the effect that white-daisy coverage has on surface temperature and the effect that surface temperature has on white-daisy coverage. We can say that the system is in equilibrium. If the system is already in one of these states, it will remain there unless something disturbs it.</p>
-	<p>Unfortunately, disturbances do occur in the system: the increasing solar luminosity.</p>
+	<p>If we graph the inverse of the linear function along with the quadratic function, we can observe two intersections, \(P_1\) and \(P_2\). These points of intersection are special because they represent the only states of the system that simultaneously fall on the curves showing both the effect that white-daisy coverage has on surface temperature and the effect that surface temperature has on white-daisy coverage. We can say that the system is in equilibrium. If the system is already in one of these states, it will remain there unless something disturbs it.</p>
+	<p>Unfortunately, disturbances do occur in the system: the increasing solar luminosity, which should result in an increase surface temperatures in Daisyworld, or \(\Delta T_0\) to the right. Suppose we are at \(P_1\). Daisyworld responds by increasing the daisy coverage to \(P_1'\); the increase in daisy coverage causes a slight decrease in the temperature, \(\Delta T_f\), due to the increased overall albedo of the planet. The overall temperature increase is limited to \(\Delta T_{eq}\) instead. Daisyworld is able to stabalize the increase and help the system remain in the equilibrium. Since temperature increase encourages daisy growth and daisy growth inhibits temperature increase, we can say that the system controls itself through a negative feedback loop. The equilibrium is thus a stable equilibrium, or one that the system will still return to after being disturbed.</p>
+	<p>\(P_2\) is another case. Here, temperature increase inhibits daisy growth since the real temperature is higher than the optimum temperature. Daisy growth still inhibits temperature increase, so there is a positive feedback loop amplifying the temperature increase. \(P_2'\) thus represents an unstable equilibrium; the system will remain in its current state if no disturbances are present, but any small disturbance will carry the system to another different state.</p>
+
+	<h3>Modelling</h3>
+	<p>The daisy coverage can thus be simulated based on the variables and rules defined above. The program loops through consecutive rounds of 50 million years, \(t\), until \(T\) is reached, continuously calculating and recording the daisy coverage and temperature.</p>
+	<p>In each round, we first calculate the temperature \(\theta\). We first calculate the current solar luminosity measured in the equivalent temperature of the planet, \(l_t\), based on the last recorded luminosity, \(l_{t-1}\), and \(\Delta l\); next comes the current average albedo of the planet based on the daisy coverage in the last round, the albedo of the daisies, and the albedo of the ground. The temperature is equivalent luminosity when albedo is taken into account, or:</p>
+	\[l_t = l_{t-1} \Delta l\]
+	\[a_t = 1 - (a_d d_t - a_g (1 - d_t))\]
+	\[\theta_t = l_t a_t\]
 
 
 	<h2>Results</h2>
 
 	<h3>Without the Daisies</h3>
+	<p></p>
 
 	<h3>Introduction of the Equilibrium</h3>
 
@@ -143,7 +181,7 @@ td.left {
 				<li>Matplotlib: <code>pip3 install matplotlib</code></li>
 			</ul>
 		</li>
-		<li>Run the Terminal command to start the program: <code>python3 <b>[drag daisyworld.py into the window]</b></code>
+		<li>Run the Terminal command to start the program: <code>python3 <var>[drag daisyworld.py into the window]</var></code>
 	</ol>
 
 	<h3>Interface</h3>
