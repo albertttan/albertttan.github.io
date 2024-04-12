@@ -34,7 +34,6 @@ a:link, a:visited, a:hover, a:active {
 	<p>The growth of daisies, however, is also controlled by temperature, like any other regular organism. There is an optimum temperature in which daisies grow at the fastest rate; as temperature moves away from the optimum temperature, the growth rate of daisies decrease, until at some point the planet is too cold or too hot to sustain any extra daisies.</p>
 	<p>The system seems quite fragile to disturbances at first glance: any significant change in daisy coverage would result in a significant change in temperature, and any significant change in temperature would result in a significant change in daisy coverage. In reality, these factors can manage to work together to keep the Daisyworld in an equilibrium for a relatively long period of time, just like how Earth managed to regulate itself for more than 4 billion years.</p>
 	<p>However, we will eventually observe the fall of the equilibrium as the forcing (persistent disturbance of a system), or the change in solar luminosity in this case, becomes too much. This outlines the potential threat faced by the Earth in the far future.</p>
-	<p class="ps">Unfortunately, this page is still not fully finished. Ms. Schenk, if you see this line, please contact me so that I can finish this page as soon as possible, hopefully within a day.</p>
 
 
 	<h2>Simulation</h2>
@@ -124,19 +123,49 @@ a:link, a:visited, a:hover, a:active {
 				<td>\(\theta_t\)</td>
 				<td>(varies)</td>
 				<td>Kelvins</td>
-				<td class="left">Temperature in Daisyworld in round (\t\)</td>
+				<td class="left">Temperature in Daisyworld in round \(t\)</td>
 			</tr>
 			<tr>
 				<td>\(l_t\)</td>
 				<td>(varies)</td>
 				<td>Kelvins</td>
-				<td class="left">Kelvin equivalent of solar luminosity in round (\t\)</td>
+				<td class="left">Kelvin equivalent of solar luminosity in round \(t\)</td>
 			</tr>
 			<tr>
 				<td>\(d_t\)</td>
 				<td>(varies)</td>
 				<td>%</td>
-				<td class="left">Daisy coverage in round (\t\)</td>
+				<td class="left">Daisy coverage in round \(t\)</td>
+			</tr>
+			<tr>
+				<td>\(a_t\)</td>
+				<td>(varies)</td>
+				<td>%</td>
+				<td class="left">Average albedo in round \(t\)</td>
+			</tr>
+			<tr>
+				<td>\(G_\theta\)</td>
+				<td>(varies)</td>
+				<td>%</td>
+				<td class="left">Growth rate under temperature \(\theta\)</td>
+			</tr>
+			<tr>
+				<td>\(C_{B, t}\)</td>
+				<td>(varies)</td>
+				<td>%</td>
+				<td class="left">Chance of a daisy to grow through spreading in round \(t\)</td>
+			</tr>
+			<tr>
+				<td>\(C_{R, t}\)</td>
+				<td>(varies)</td>
+				<td>%</td>
+				<td class="left">Chance of a daisy to grow through random generation in round \(t\)</td>
+			</tr>
+			<tr>
+				<td>\(C_{D, t}\)</td>
+				<td>(varies)</td>
+				<td>%</td>
+				<td class="left">Chance of a daisy to die in round \(t\)</td>
 			</tr>
 		</tbody>
 	</table>
@@ -158,13 +187,21 @@ a:link, a:visited, a:hover, a:active {
 	<p>The current solar luminosity measured in the equivalent temperature of the planet, \(l_t\), can be calculated based on the last recorded luminosity, \(l_{t-1}\), and \(\Delta l\). The current average albedo of the planet, \(a_t\), based on the daisy coverage in the last round \(d_{t-1}\), the albedo of the daisies \(a_d\), and the albedo of the ground \(a_g\).</p>
 	<p>\[l_t = l_{t-1} \Delta l\]
 	\[a_t = a_d d_{t-1} + a_g (100\% - d_{t-1})\]</p>
-	<p>We then iterate through each grid to determine whether 
+	<p>We then iterate through each grid twice, once to determine whether a new daisy will grow in an empty pixel, next to determine whether a grown daisy will die and get removed. The growth rate of daisies, which is determined by temperature through the quadratic optimum temperature curve, controls daisy generation as a percentage of the maximum rate at the optimum temperature. Simplifying the quadratic function, we can observe how the raw growth rate \(G\) at temperature \(\theta\) can be obtained from the values of \(\theta_O\) and \(\theta_\max\) or \(\theta_\min\) as:</p>
+	<p>\[G_\theta = 1 - \frac{(\theta - \theta_O)^2}{(\theta_\max - \theta_O)^2}\] </p>
+	<p>A daisy might spread to a nearby empty pixel from an existing daisy. For each of the four grids near an existing daisy, the chance of a daisy being planted in the respective grid through spreading, \(C_B\), is one-fourth of the product of the growth rate \(G\), the universal birth rate \(B\) (defined at the start of the simulation), and a representation of how the population growth might be regulated by density dependent factors.</p>
+	<p>\[C_{B, t} = \frac{1}{4} B G_{\theta_t} (1 - d_{t-1})\]</p>
+	<p>A daisy might also randomly generate out of nowhere if the temperature condition is acceptable; this is especially important e.g. for the introduction of the first daisies to the planet. The chance of a daisy being planted in the respective grid randomly, \(C_R\), is the product of the growth rate \(G\), the universal random generation rate \(R\) (defined at the start of the simulation), and a representation of how the population growth might be regulated by density dependent factors.</p>
+	<p>\[C_{R, t} = R G_{\theta_t} (1 - d_{t-1})\]</p>
+	<p>Lastly, daisies die when they have lived for long enough. A daisy is more likely to die when the growth rate is low, which means the environment is less optimal to sustain this much daisies. The chance of a daisy to disappear into nowhere, \(C_D\), is the product of the difference between \(100\%\) and the growth rate \(G\) and the universal death rate \(D\) (defined at the start of the simulation).</p>
+	<p>\[C_{D, t} = D (1 - G_{\theta_t})\]</p>
+	<p>We randomly simulate the process of growth and death of daisies to obtain the results below.</p>
 
 
 	<h2>Results</h2>
 
 	<h3>Without the Daisies</h3>
-	<p></p>
+	<p class="ps">Unfortunately, this page is still not fully finished. Ms. Schenk, if you see this line, please contact me so that I can finish this page as soon as possible, hopefully within a day.</p>
 
 	<h3>Introduction of the Equilibrium</h3>
 
