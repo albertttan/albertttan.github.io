@@ -21,14 +21,16 @@ a:link, a:visited, a:hover, a:active {
 </head>
 <body>
 <header>
-	<h1>Daisyworld Simulation</h1>
+	<p style="margin-bottom: 0px"><b>Intellectual Challenge: Equilibrium</b></p>
+	<h1 style="
+	margin: 0px">Daisyworld Simulation</h1>
 	<p>Albert Tan</p>
 </header>
 <article>
 	<h2>Introduction and Applications</h2>
 	<img class="embed" src="daisyworld-overview.webp" alt="Overview of Daisyworld" title="Overview of Daisyworld">
 	<p>Nuclear fusion in the sun causes its core to contract and heat up slightly as its helium content increases. As the result, energy production from the sun's core increases, energy emitted at the surface of the sun increases, and the sun appears brighter. In fact, when the Sun first formed 4.6 billion years ago, it should have been about 30% less luminous than it is today. This means that if all other factors had remained constant, the early Earth should have been colder than it is today, being ice-covered prior to 2 billion years ago.</p>
-	<p>However, this isn't the case. Sedimentary rock evidences prove that liquid water has existed on Earth's surface for at least the last 3.8 billion years. This apparent discrepancy is called the "faint young Sun paradox." The most likely solution is that the level of greenhouse gases in Earth's primitive atmosphere was significantly higher; as solar luminosity gradually increases, the level of greenhouse gases gradually decreases, keeping the temperature of the earth in a rough equilibrium.</p> 
+	<p>However, this isn't the case. Sedimentary rock evidences prove that liquid water has existed on Earth's surface for at least the last 3.8 billion years. This apparent discrepancy is called the "faint young Sun paradox." The most likely explanation is that the level of greenhouse gases in Earth's primitive atmosphere was significantly higher; as solar luminosity gradually increases, the level of greenhouse gases gradually decreases, keeping the temperature of the earth in a rough equilibrium.</p> 
 	<p>Why should this have been true? What caused the change in greenhouse gas concentration? The Daisyworld is a hypothetical model to show how self-regulation and interaction between systems automatically created such long-term climate equilibrium on a planet, and how this equilibrium might eventually shatter when the external changes become too significant.</p>
 	<p>White daisies grow on the dark soil of Daisyworld. As we all know, brighter surfaces reflect more heat since they have a higher albedo (the proportion of the incident light or radiation that is reflected by a surface), and vice versa; if there are more daisies on the surface of Daisyworld, the temperature in Daisyworld will be lower.</p>
 	<p>The growth of daisies, however, is also controlled by temperature, like any other regular organism. There is an optimum temperature in which daisies grow at the fastest rate; as temperature moves away from the optimum temperature, the growth rate of daisies decrease, until at some point the planet is too cold or too hot to sustain any extra daisies.</p>
@@ -115,55 +117,47 @@ a:link, a:visited, a:hover, a:active {
 			</tr>
 			<tr>
 				<td>\(t\)</td>
-				<td>(varies)</td>
+				<td rowspan=9>(varies)</td>
 				<td>50 Million Years</td>
 				<td class="left">Round of simulation</td>
 			</tr>
 			<tr>
 				<td>\(\theta_t\)</td>
-				<td>(varies)</td>
 				<td>Kelvins</td>
 				<td class="left">Temperature in Daisyworld in round \(t\)</td>
 			</tr>
 			<tr>
 				<td>\(l_t\)</td>
-				<td>(varies)</td>
 				<td>Kelvins</td>
 				<td class="left">Kelvin equivalent of solar luminosity in round \(t\)</td>
 			</tr>
 			<tr>
 				<td>\(d_t\)</td>
-				<td>(varies)</td>
 				<td>%</td>
 				<td class="left">Daisy coverage in round \(t\)</td>
 			</tr>
 			<tr>
 				<td>\(a_t\)</td>
-				<td>(varies)</td>
 				<td>%</td>
 				<td class="left">Average albedo in round \(t\)</td>
 			</tr>
 			<tr>
 				<td>\(G_\theta\)</td>
-				<td>(varies)</td>
 				<td>%</td>
 				<td class="left">Growth rate under temperature \(\theta\)</td>
 			</tr>
 			<tr>
 				<td>\(C_{B, t}\)</td>
-				<td>(varies)</td>
 				<td>%</td>
 				<td class="left">Chance of a daisy to grow through spreading in round \(t\)</td>
 			</tr>
 			<tr>
 				<td>\(C_{R, t}\)</td>
-				<td>(varies)</td>
 				<td>%</td>
 				<td class="left">Chance of a daisy to grow through random generation in round \(t\)</td>
 			</tr>
 			<tr>
 				<td>\(C_{D, t}\)</td>
-				<td>(varies)</td>
 				<td>%</td>
 				<td class="left">Chance of a daisy to die in round \(t\)</td>
 			</tr>
@@ -193,7 +187,7 @@ a:link, a:visited, a:hover, a:active {
 	<p>\[C_{B, t} = \frac{1}{4} B G_{\theta_t} (1 - d_{t-1})\]</p>
 	<p>A daisy might also randomly generate out of nowhere if the temperature condition is acceptable; this is especially important e.g. for the introduction of the first daisies to the planet. The chance of a daisy being planted in the respective grid randomly, \(C_R\), is the product of the growth rate \(G\), the universal random generation rate \(R\) (defined at the start of the simulation), and a representation of how the population growth might be regulated by density dependent factors.</p>
 	<p>\[C_{R, t} = R G_{\theta_t} (1 - d_{t-1})\]</p>
-	<p>Lastly, daisies die when they have lived for long enough. A daisy is more likely to die when the growth rate is low, which means the environment is less optimal to sustain this much daisies. The chance of a daisy to disappear into nowhere, \(C_D\), is the product of the difference between \(100\%\) and the growth rate \(G\) and the universal death rate \(D\) (defined at the start of the simulation).</p>
+	<p>Lastly, daisies die when they have lived for long enough. A daisy is more likely to die when the growth rate is low, which means the environment is less optimal to sustain this much daisies. The chance of a daisy to disappear into nowhere, \(C_D\), is the product of the difference between \(100\%\) and the growth rate \(G\) and the universal death rate \(D\) (defined at the start of the simulation). Notice that when \(G\) goes below zero, or when the temperature can no longer sustain the growth of daisies, all daisies quickly perish.</p>
 	<p>\[C_{D, t} = D (1 - G_{\theta_t})\]</p>
 	<p>We randomly simulate the process of growth and death of daisies to obtain the results below.</p>
 
@@ -201,9 +195,12 @@ a:link, a:visited, a:hover, a:active {
 	<h2>Results</h2>
 
 	<h3>Without the Daisies</h3>
-	<p class="ps">Unfortunately, this page is still not fully finished. Ms. Schenk, if you see this line, please contact me so that I can finish this page as soon as possible, hopefully within a day.</p>
+	<p>If daisies do not exist in the world, daisy coverage \(d\) remains in a constant zero, the average albedo of the planet \(a\) remains the same as the albedo of the ground \(a_g\), and the temperature of Daisyworld will always be proportional to the solar luminosity, which is increasing exponentially through time.</p>
+	<p>This is exactly what happens when the temperature of Daisyworld was lower than the minimum temperature that can support daisy growth. The lack of daisies allowed the planet to heat up continuously without the feedback loop regulating the change.</p>
 
 	<h3>Introduction of the Equilibrium</h3>
+	<p>Everything changes when the first daisy started to bloom when the minimum temperature to sustain daisy growth is reached, or when the two graphs finally meet for the first time at \((\theta_\min, 0)\).</p>
+	<p class="ps">Unfortunately, this page is still not fully finished. Ms. Schenk, if you see this line, please contact me so that I can finish this page as soon as possible, hopefully within a day.</p>
 
 	<h3>Fall of the Equilibrium</h3>
 
