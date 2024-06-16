@@ -120,7 +120,7 @@ img.embed {
 	margin-left: 10px; 
 	margin-bottom: 10px; 
 }
-img,svg.link {
+img.link {
 	height: 80px;
 	width: 80px;
 	float: left;
