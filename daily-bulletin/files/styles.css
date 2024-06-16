@@ -120,13 +120,11 @@ img.embed {
 	margin-left: 10px; 
 	margin-bottom: 10px; 
 }
-img.link {
+img,svg.link {
 	height: 80px;
 	width: 80px;
 	float: left;
-	margin-top: 10px;
-	margin-left: 10px;
-	margin-right: 10px;
+	margin: 10px;
 }
 div.link {
 	background-color: rgb(240, 240, 240);
@@ -150,4 +148,9 @@ hr {
 footer {
 	padding-top: 1rem;
 	text-align: center;
+}
+@media only screen and (max-width: 400px) {
+	.link p {
+		display: none;
+	}
 }
