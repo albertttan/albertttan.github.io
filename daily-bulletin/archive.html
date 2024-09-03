@@ -8,12 +8,24 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap">
 	<link rel="stylesheet" href="files/styles.css">
+	<style>
+		.column {
+			float: left;
+			width: 50%;
+		}
+		article:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+	</style>
 </head>
 <body>
 	<header>
 		<h1>Archive</h1>
 	</header>
 	<article>
+		<div class="column">
 		<h2>2024</h2>
 		<h3>June</h3>
 		<ul>
@@ -135,7 +147,9 @@
 			<li><a href="2024-01-09.html"><time datetime="2024-01-09">2024-01-09</time></a></li>
 			<li><a href="2024-01-08.html"><time datetime="2024-01-08">2024-01-08</time></a></li>
 		</ul>
-		<h2>2024</h2>
+		</div>
+		<div class="column">
+		<h2>2023</h2>
 		<h3>December</h3>
 		<ul>
 			<li><a href="2023-12-22.html"><time datetime="2023-12-22">2023-12-22</time></a></li>
@@ -209,6 +223,7 @@
 			<li><a href="2023-09-18.html"><time datetime="2023-09-18">2023-09-18</time></a></li>
 			<li><a href="2023-09-13.html"><time datetime="2023-09-13">2023-09-13</time></a></li>
 		</ul>
+		</div>
 	</article>
 	<footer>
 		<p><a href="./">Home Page</a> · <a href="archive.html">Archive</a> · <a href="mailto:s22505@ykpaoschool.cn">Contact</a></p>
