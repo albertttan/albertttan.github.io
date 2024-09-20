@@ -7576,8 +7576,8 @@ a.anchor-link {
 <span class="n">params</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">log_func</span><span class="p">,</span> <span class="n">x_data</span><span class="p">,</span> <span class="n">y_data</span><span class="p">)</span>
 <span class="n">param_a</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">param_b</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">speed_adjustedustment</span> <span class="o">=</span> <span class="mi">250000</span> <span class="o">/</span> <span class="mi">500</span> <span class="o">/</span> <span class="mf">8.5</span>  <span class="c1"># adsorbent volume difference / effluent volume difference / volume concentration difference</span>
-<span class="n">param_b_adjusted</span> <span class="o">=</span> <span class="n">param_b</span> <span class="o">/</span> <span class="n">speed_adjustedustment</span>
+<span class="n">speed_adjustment</span> <span class="o">=</span> <span class="mi">250000</span> <span class="o">/</span> <span class="mi">500</span> <span class="o">/</span> <span class="mf">8.5</span>  <span class="c1"># adsorbent volume difference / effluent volume difference / volume concentration difference</span>
+<span class="n">param_b_adjusted</span> <span class="o">=</span> <span class="n">param_b</span> <span class="o">/</span> <span class="n">speed_adjustment</span>
 
 <span class="n">param_a</span><span class="p">,</span> <span class="n">param_b_adjusted</span>
 </pre></div>
