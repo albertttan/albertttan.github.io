@@ -61,6 +61,10 @@
 			currentSlide = (currentSlide + 1) % slides.length;
 			slides[currentSlide].classList.add('active');
 		});
+
+		if (/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			alert("Please view the page from a computer browser for the best  experience");
+		}
 	</script>
 </body>
 </html>
