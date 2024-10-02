@@ -10,7 +10,7 @@
 		}
 		.iframe-container {
 			width: calc(100% - 2px);
-			height: calc(100vh - 60px);
+			height: calc(100vh - 60px - env(safe-area-inset-bottom));
 			border: 1px solid #ccc;
 		}
 		.iframe-slide {
@@ -25,6 +25,7 @@
 			position: fixed;
 			width: 250px;
             left: calc(50% - 125px);
+            bottom: env(safe-area-inset-bottom);
 			background: #444;
 			color: #fff;
 			font-size: 20px;
