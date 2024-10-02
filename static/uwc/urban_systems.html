@@ -10,7 +10,7 @@
 		}
 		.iframe-container {
 			width: 100%;
-			height: calc(100vh - 60px - 2 * env(safe-area-inset-bottom));
+			height: calc(100vh - 60px - env(safe-area-inset-bottom));
 			border: 1px solid #ccc;
 		}
 		.iframe-slide {
@@ -23,16 +23,18 @@
 		}
 		#nextButton {
 			position: fixed;
+			border: none;
+			outline: none;
 			width: 250px;
             left: calc(50% - 125px);
-            bottom: env(safe-area-inset-bottom);
+            bottom: calc(env(safe-area-inset-bottom) + 3px);
 			background: #444;
 			color: #fff;
 			font-size: 20px;
 			font-weight: 100;
 			text-align: center;
 			padding: 10px;
-			border-radius: 8px;
+			border-radius: 5px;
 			cursor: pointer;
 		}
 	</style>
