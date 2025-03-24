@@ -143,10 +143,6 @@ h1 {
     transition: background 0.3s ease;
 }
 
-.nav-title:hover {
-    background-color: var(--gray-3);
-}
-
 .nav-title::after {
     content: '+';
 }
@@ -157,6 +153,10 @@ h1 {
 
 .nav-title.active::after {
     content: '−';
+}
+
+.nav-title:hover {
+    background-color: var(--gray-3);
 }
 
 /* Submenu */
@@ -177,7 +177,7 @@ h1 {
 .subnav li {
     padding: 0.5rem 2rem;
     font-size: small;
-    font-weight: bold;
+    font-weight: normal;
     color: var(--gray-5);
     cursor: pointer;
     transition: background 0.3s ease;
