@@ -4,7 +4,7 @@ function shuffle() {
     const img = new Image();
     img.src = `/portfolio/photos/static/${images[Math.floor(Math.random() * images.length)]}`;
     img.onload = () => {
-        const x = Math.random() * (img.width - 16), y = Math.random() * (img.height - 16);
+        const x = Math.round(Math.random() * (img.width - 16)), y = Math.round(Math.random() * (img.height - 16));
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
         ctx.imageSmoothingEnabled = false;
