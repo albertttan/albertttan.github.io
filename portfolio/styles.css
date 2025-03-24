@@ -24,7 +24,7 @@
 
 body {
     margin: 0;
-    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+    font-family: "Libre Baskerville", "SF Mono", "Menlo", "Consolas", monospace;
     display: flex;
     flex-direction: row;
     --gray-1: #eee; /* Primary background */
@@ -210,12 +210,26 @@ h1 {
 
 iframe {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     margin: 0;
     border: 0;
+    display: block;
 }
 
 a {
     color: inherit;
     text-decoration: none;
+}
+
+.fragment {
+    text-align: center;
+    align-items: center;
+}
+
+canvas {
+    width: 80px;
+    height: 80px;
+    image-rendering: pixelated;
+    display: block;
+    margin: 20px auto;
 }
