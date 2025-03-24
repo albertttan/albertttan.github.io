@@ -14,59 +14,89 @@
     </div>
     
     <div class="sidebar">
-        <header>
-            <a href="/portfolio/"><h1><span class="ps">Portfolio</span><br>Albert Tan</h1></a>
-        </header>
+        <a href="/portfolio/">
+            <header>
+                <h1><span class="ps">Portfolio</span><br>Albert Tan</h1>
+            </header>
+        </a>
         
-        <ul class="nav-list">
-            <li class="nav-item">
-                <a href="/portfolio/photos/stories/"><div class="nav-title"><div><span class="ps">Photography</span><br>Stories</div></div></a>
+        <ul class="nav">
+            <li>
+                <a href="/portfolio/photos/stories/">
+                    <div class="nav-title"><span class="ps">Photography</span><br>Stories</div>
+                </a>
+<!--
                 <ul class="subnav">
-                    <a href="/portfolio/photos/stories/california/"><li>California</li></a>
-                    <a href="/portfolio/photos/stories/vale-of-glamorgan/"><li>Vale of Glamorgan</li></a>
+                    <li>
+                        <a href="/portfolio/photos/stories/california/">California</a>
+                    </li>
+                    <li>
+                        <a href="/portfolio/photos/stories/vale-of-glamorgan/">Vale of Glamorgan</a>
+                    </li>
                 </ul>
+-->
             </li>
 
-            <li class="nav-item">
-                <a href="/portfolio/photos/themes/"><div class="nav-title"><div><span class="ps">Photography</span><br>Themes</div></div></a>
+            <li>
+                <a href="/portfolio/photos/themes/">
+                    <div class="nav-title"><span class="ps">Photography</span><br>Themes</div>
+                </a>
+<!--
                 <ul class="subnav">
-                    <a href="/portfolio/photos/themes/liminality/"><li>Liminality</li></a>
-                    <a href="/portfolio/photos/themes/solitude/"><li>Solitude</li></a>
+                    <li>
+                        <a href="/portfolio/photos/themes/liminality/">Liminality</a>
+                    </li>
+                    <li>
+                        <a href="/portfolio/photos/themes/solitude/">Solitude</a>
+                    </li>
                 </ul>
+-->
+            </li>
+
+            <li>
+                <a href="/portfolio/ceramics/">
+                    <div class="nav-title">Ceramics</div>
+                </a>
+<!--
+                <ul class="subnav">
+                    <li>
+                        <a href="/portfolio/ceramics/sunset/">Sunset Shades</a>
+                    </li>
+                    <li>
+                        <a href="/portfolio/ceramics/fossils/">Fossils of the Anthropocene</a>
+                    </li>
+                    <li>
+                        <a href="/portfolio/ceramics/penguins/">Penguins</a>
+                    </li>
+                </ul>
+-->
             </li>
             
-            <li class="nav-item">
-                <a href="/portfolio/ceramics/"><div class="nav-title">Ceramics</div></a>
-                <ul class="subnav">
-                    <a href="/portfolio/ceramics/sunset/"><li>Sunset Shades</li></a>
-                    <a href="/portfolio/ceramics/fossils/"><li>Fossils of the Anthropocene</li>
-                    <a href="/portfolio/ceramics/penguins/"><li>Penguins</li></a>
-                </ul>
+            <li>
+                <a href="/portfolio/poems/">
+                    <div class="nav-title">Poems</div>
+                </a>
             </li>
             
-            <li class="nav-item">
-                <a href="/portfolio/poems/"><div class="nav-title">Poems</div></a>
-            </li>
-            
-            <li class="nav-item">
-                <div class="nav-title">About</div>
-                <ul class="subnav">
-                    <li>Who am I?</li>
-                    <li>Contact</li>
-                </ul>
+            <li>
+                <a href="/portfolio/about/">
+                    <div class="nav-title">About
+                    </div>
+                </a>
             </li>
         </ul>
     </div>
+
     <div class="content">
         <div class="fragment">
             <h2>Memory Fragment</h2>
             <canvas id="canvas"></canvas>
-            <br>
-            <a id="original-link" target="_blank">View Original Image</a><br>
-            <button id="shuffle">Shuffle</button>
+            <a id="full-memory" href="" target="_blank"><img class="inline" src="/portfolio/full-memory.svg" alt="Full memory icon">&thinsp;Visit Full Memory</a><br>
+            <a id="shuffle" href=""><img class="inline" src="/portfolio/shuffle.svg" alt="Shuffle icon">&thinsp;Shuffle</a>
         </div>
         <!--<iframe src="https://example.com/" allowfullscreen allow="geolocation"></iframe>-->
     </div>
+
     <script src="/portfolio/sidebar.js"></script>
     <script src="/portfolio/fragment.js"></script>
 </body>

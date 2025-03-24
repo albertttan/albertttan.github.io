@@ -9,7 +9,7 @@ function shuffle() {
         const ctx = canvas.getContext('2d');
         ctx.imageSmoothingEnabled = false;
         ctx.drawImage(img, x, y, 16, 16, 0, 0, canvas.width, canvas.height);
-        document.getElementById('original-link').href = img.src;
+        document.getElementById('full-memory').href = img.src;
     };
 }
 
