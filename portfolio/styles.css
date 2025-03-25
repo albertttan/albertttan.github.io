@@ -202,10 +202,10 @@ h1 {
 
 .menu-toggle span {
     display: block;
-    width: 25px;
-    height: 3px;
+    width: 1.5rem;
+    height: 0.2rem;
     background-color: var(--gray-6);
-    margin: 5px 0;
+    margin: 0.4rem 0;
     transition: all 0.3s ease;
 }
 
@@ -225,8 +225,9 @@ h1 {
         top: 0;
         left: 0;
         z-index: 999;
-        transform: translateX(-100%);
+        width: calc(100% - 2.5rem);
         height: 100vh;
+        transform: translateX(-100%);
         overflow-y: auto;
     }
     
