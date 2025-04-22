@@ -10,8 +10,8 @@
     <style>
         :root {
             --primary-color: #2c3e50;
-            --secondary-color: rgb(0, 100, 166);
-            --accent-color: rgb(0, 144, 136);
+            --secondary-color: #3498db;
+            --accent-color: #1abc9c;
             --light-color: #f8f9fa;
             --dark-color: #343a40;
         }
@@ -189,14 +189,8 @@
             }
         }
     </style>
-    <!-- START Formbricks Surveys -->
-    <script type="text/javascript">
-    !function(){
-        var appUrl = "https://app.formbricks.com";
-        var environmentId = "cm9ssfpio0cv6rz01smwehbz3";
-        var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=appUrl+"/js/formbricks.umd.cjs",t.onload=function(){window.formbricks?window.formbricks.setup({environmentId:environmentId,appUrl:appUrl}):console.error("Formbricks library failed to load properly. The formbricks object is not available.");};var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}();
-    </script>
-    <!-- END Formbricks Surveys -->
+    <!-- Umami Analytics -->
+    <script data-website-id="c78b1615-da26-47f0-b9b2-c1eb114c4733" defer="" src="https://cloud.umami.is/script.js"></script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -245,7 +239,7 @@
     </section>
 
     <!-- Warning -->
-    <p style="color: darkred; font-weight: bold; text-align: center; background-color: lightpink; margin: 0; padding: 1em;">The rest of this page is full of inaccurate placeholders, and reading it is a waste of your time.</p>
+    <p class="alert alert-danger text-center m-0 p-2">The rest of this page is currently full of inaccurate placeholders, and reading it is a waste of your time.</p>
 
     <!-- Features Section -->
     <section id="features" class="section bg-light">
@@ -475,7 +469,7 @@
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="fw-bold">Request a Sample</h2>
-                <p class="text-muted">Try SwipeSeal in your laboratory</p>
+                <p class="text-muted">Try SwipeSeal in your laboratory!</p>
             </div>
             
             <div class="row justify-content-center">
@@ -496,12 +490,12 @@
                                 
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <label for="email" class="form-label required">Email Address</label>
-                                        <input type="email" class="form-control" name="email" id="email" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
                                         <label for="institution" class="form-label">Institution</label>
                                         <input type="text" class="form-control" name="institution" id="institution">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label required">Email Address</label>
+                                        <input type="email" class="form-control" name="email" id="email" required>
                                     </div>
                                 </div>
                                 
@@ -521,24 +515,26 @@
                                     </div>
                                 </div>
                                 
-                                <div id="warningOther" class="alert alert-warning mb-3 d-none">
+                                <div id="warningOther" class="alert alert-warning mb-3 px-2 py-1 d-none">
                                     Prototype delivery to other countries & regions may be more difficult. Please wait for further confirmation after submitting the form.
                                 </div>
                                 
-                                <div id="addressField" class="mb-3">
-                                    <label for="address" class="form-label required">Full Address</label>
-                                    <textarea class="form-control" name="address" id="address" rows="3"></textarea>
-                                </div>
-                                
-                                <div class="mb-4">
-                                    <label for="message" class="form-label">Additional Comments</label>
-                                    <textarea class="form-control" name="message" id="message" rows="3"></textarea>
+                                <div class=row>
+                                    <div id="addressField" class="col-md-6 mb-3">
+                                        <label for="address" class="form-label required">Full Address</label>
+                                        <textarea class="form-control" name="address" id="address" rows="3"></textarea>
+                                    </div>
+                                    
+                                    <div class="col-md-6 mb-4">
+                                        <label for="message" class="form-label">Additional Comments</label>
+                                        <textarea class="form-control" name="message" id="message" rows="3"></textarea>
+                                    </div>
                                 </div>
                                 
                                 <div class="form-check mb-4">
                                     <input class="form-check-input" type="checkbox" id="terms" required>
                                     <label class="form-check-label required" for="terms">
-                                        I understand and agree that my information may be used to deliver, improve, and promote the prototype, but will <strong>not</strong> be used for any other purpose or shared with any third party.
+                                        I understand and agree that my information may be used to deliver, improve, and promote the prototype, but will <strong>not</strong> be used for any other purpose or shared with any third party unless strictly necessary.
                                     </label>
                                 </div>
                                 
@@ -618,33 +614,6 @@
         
         // Update validation on country change
         countrySelect.addEventListener('change', updateFormValidation);
-        
-        // Form submission
-        document.getElementById('sampleRequestForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            // Form data would be sent to a server endpoint
-            // For demonstration, we'll just show what would be sent
-            const formData = {
-                name: document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value,
-                email: document.getElementById('email').value,
-                institution: document.getElementById('institution').value,
-                country: document.getElementById('country').value,
-                address: document.getElementById('address').value,
-                postalCode: document.getElementById('postalCode').value,
-                researchArea: document.getElementById('researchArea').value,
-                message: document.getElementById('message').value
-            };
-            
-            console.log('Form data would be sent to server:', formData);
-            
-            // In a real implementation, this would be sent to a backend service
-            // via fetch or XMLHttpRequest
-            
-            alert('Thank you for your interest in SwipeSeal! Your sample request has been submitted.');
-            this.reset();
-            updateFormValidation();
-        });
         
         // Smooth scrolling for navigation links
         document.querySelectorAll('a.nav-link').forEach(link => {
