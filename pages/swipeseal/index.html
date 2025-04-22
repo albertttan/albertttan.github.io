@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SwipeSeal - Biotech Handheld Applicator</title>
+    <title>SwipeSeal</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -223,7 +223,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero section vh-100 pb-4 d-flex align-items-end align-items-lg-center">
+    <section id="home" class="hero section vh-100 pb-4 d-flex align-items-end align-items-lg-center" style="height: 100svh;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="order-lg-first order-last col-lg-6 ml-4">
@@ -498,6 +498,10 @@
                                         <input type="email" class="form-control" name="email" id="email" required>
                                     </div>
                                 </div>
+
+                                <div id="warningOther" class="alert alert-warning mb-3 px-2 py-1 d-none">
+                                    Prototype delivery to other countries & regions may be more difficult. Please wait for further confirmation after submitting the form.
+                                </div>
                                 
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
@@ -513,10 +517,6 @@
                                         <label for="postalCode" class="form-label required">Postal Code</label>
                                         <input type="text" class="form-control" name="postalCode" id="postalCode">
                                     </div>
-                                </div>
-                                
-                                <div id="warningOther" class="alert alert-warning mb-3 px-2 py-1 d-none">
-                                    Prototype delivery to other countries & regions may be more difficult. Please wait for further confirmation after submitting the form.
                                 </div>
                                 
                                 <div class=row>
