@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SwipeSeal</title>
+    <title>SwiftSeal</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -17,7 +17,7 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', 'Helvetica Neue', 'Helvetica', 'Segoe UI', 'Arial', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', 'Helvetica Neue', 'Inter', 'Helvetica', 'Segoe UI', 'Arial'/*, 'Noto Sans SC', 'Source Han Sans SC', 'PingFang SC', 'STHeiti', 'SimHei'*/, sans-serif;
             color: var(--dark-color);
             scroll-padding-top: 80px;
         }
@@ -32,7 +32,7 @@
 
         .full-height {
             height: 100vh;
-            height: 100svh;
+            height: 100dvh;
         }
         
         .navbar {
@@ -201,7 +201,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">SwipeSeal</a>
+            <a class="navbar-brand" href="#">SwiftSeal</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -214,13 +214,16 @@
                         <a class="nav-link" href="#features">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#timeline">Development</a>
+                        <a class="nav-link" href="#comparison">Comparison</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#timeline">Timeline</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#faq">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#request">Request Sample</a>
+                        <a class="nav-link fw-bold" href="#request">Request a Sample</a>
                     </li>
                 </ul>
             </div>
@@ -232,12 +235,12 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="order-lg-first order-last col-lg-6 px-3">
-                    <h1 class="fw-bold display-1 mb-3">SwipeSeal</h1>
-                    <p class="lead mb-3">The next-generation adhesive film applicators for 96-well PCR plates, designed for efficiency, convenience, and precision in the laboratory.</p>
+                    <h1 class="fw-bold display-1 mb-3">SwiftSeal<!-- 瞬封--></h1>
+                    <p class="lead mb-3">The next-generation adhesive film applicator for 96-well PCR plates, designed for efficiency, convenience, and precision in the laboratory.</p>
                     <a href="#request" class="btn btn-primary btn-lg">Request a Sample</a>
                 </div>
                 <div class="order-lg-last order-first col-lg-6 text-center mt-4 mb-4 m-lg-0">
-                    <img src="product.webp" alt="SwipeSeal Prototype" class="img-fluid rounded shape-shadow height-restricted">
+                    <img src="product.webp" alt="SwiftSeal Prototype" class="img-fluid rounded shape-shadow height-restricted">
                 </div>
             </div>
         </div>
@@ -247,11 +250,11 @@
     <p class="alert alert-danger text-center m-0 p-2">The rest of this page is currently full of inaccurate placeholders, and reading it is a waste of your time.</p>
 
     <!-- Features Section -->
-    <section id="features" class="section bg-light">
+    <section id="features" class="section">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="fw-bold">Features & Benefits</h2>
-                <p class="text-muted">Discover what makes SwipeSeal revolutionary</p>
+                <p class="text-muted">Discover what makes SwiftSeal revolutionary</p>
             </div>
             <div class="row g-4">
                 <!-- Feature 1 -->
@@ -262,7 +265,7 @@
                                 <i class="bi">P</i>
                             </div>
                             <h4 class="mb-3">Precision Application</h4>
-                            <p>SwipeSeal's patented micro-dispersion tip allows for ultra-precise application at the cellular level, ensuring consistent coverage with minimal waste.</p>
+                            <p>SwiftSeal's patented micro-dispersion tip allows for ultra-precise application at the cellular level, ensuring consistent coverage with minimal waste.</p>
                             <ul class="list-unstyled text-start">
                                 <li class="mb-2">✓ 0.01mm application precision</li>
                                 <li class="mb-2">✓ Adjustable flow control</li>
@@ -280,7 +283,7 @@
                                 <i class="bi">B</i>
                             </div>
                             <h4 class="mb-3">Biocompatibility</h4>
-                            <p>Developed with medical-grade materials, SwipeSeal is compatible with all major bioactive compounds and tissue types without contamination or degradation.</p>
+                            <p>Developed with medical-grade materials, SwiftSeal is compatible with all major bioactive compounds and tissue types without contamination or degradation.</p>
                             <ul class="list-unstyled text-start">
                                 <li class="mb-2">✓ Non-reactive polymer housing</li>
                                 <li class="mb-2">✓ Temperature-stable formulation</li>
@@ -298,9 +301,74 @@
                                 <i class="bi">E</i>
                             </div>
                             <h4 class="mb-3">Ergonomic Design</h4>
-                            <p>Designed with user comfort and efficiency in mind, SwipeSeal's lightweight body and intuitive controls reduce fatigue during prolonged use.</p>
+                            <p>Designed with user comfort and efficiency in mind, SwiftSeal's lightweight body and intuitive controls reduce fatigue during prolonged use.</p>
                             <ul class="list-unstyled text-start">
                                 <li class="mb-2">✓ 65g lightweight construction</li>
+                                <li class="mb-2">✓ Ambidextrous grip design</li>
+                                <li>✓ Tactile feedback controls</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="section bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Comparison Against Other Solutions</h2>
+                <p class="text-muted">Why SwiftSeal?</p>
+            </div>
+            <div class="row g-4">
+                <!-- Solution 1 -->
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mx-auto">
+                                <i class="bi">M</i>
+                            </div>
+                            <h4 class="mb-3"><a href="https://www.thermofisher.com/order/catalog/product/4333183">MicroAmp™ Adhesive Film Applicator</a></h4>
+                            <p>The original tool & method recommended by ThermoFisher and others.</p>
+                            <ul class="list-unstyled text-start">
+                                <li class="mb-2">✓ 7 Swipes, &asymp; 10 Seconds</li>
+                                <li class="mb-2">✓ Adjustable flow control</li>
+                                <li>✓ Smart pressure feedback system</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Solution 2 -->
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mx-auto">
+                                <i class="bi">S</i>
+                            </div>
+                            <h4 class="mb-3">SwiftSeal</h4>
+                            <p>Developed with medical-grade materials, SwiftSeal is compatible with all major bioactive compounds and tissue types without contamination or degradation.</p>
+                            <ul class="list-unstyled text-start">
+                                <li class="mb-2">✓ 12 Swipes, &asymp; 15 Seconds</li>
+                                <li class="mb-2">✓ Temperature-stable formulation</li>
+                                <li>✓ No leaching or contamination</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Solution 3 -->
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mx-auto">
+                                <i class="bi">3</i>
+                            </div>
+                            <h4 class="mb-3"><a href="https://www.3m.com/3M/en_US/p/d/b00005997/">3M Handheld Applicator PA1</a></h4>
+                            <p>Designed with user comfort and efficiency in mind, SwiftSeal's lightweight body and intuitive controls reduce fatigue during prolonged use.</p>
+                            <ul class="list-unstyled text-start">
+                                <li class="mb-2">&times; 25 Swipes, &asymp; 30 Seconds</li>
                                 <li class="mb-2">✓ Ambidextrous grip design</li>
                                 <li>✓ Tactile feedback controls</li>
                             </ul>
@@ -388,7 +456,7 @@
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="fw-bold">Frequently Asked Questions</h2>
-                <p class="text-muted">Common questions about SwipeSeal</p>
+                <p class="text-muted">Common questions about SwiftSeal</p>
             </div>
             
             <div class="row justify-content-center">
@@ -398,12 +466,12 @@
                         <div class="accordion-item border-0 mb-3 shadow-sm">
                             <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    What types of bioactive compounds is SwipeSeal compatible with?
+                                    What types of bioactive compounds is SwiftSeal compatible with?
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    SwipeSeal is designed to be compatible with a wide range of bioactive compounds, including hydrogels, cell suspensions, protein solutions, and synthetic biomaterials. Our non-reactive polymer housing ensures no contamination or degradation of sensitive biological materials.
+                                    SwiftSeal is designed to be compatible with a wide range of bioactive compounds, including hydrogels, cell suspensions, protein solutions, and synthetic biomaterials. Our non-reactive polymer housing ensures no contamination or degradation of sensitive biological materials.
                                 </div>
                             </div>
                         </div>
@@ -412,12 +480,12 @@
                         <div class="accordion-item border-0 mb-3 shadow-sm">
                             <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    What is the expected shelf life of the SwipeSeal applicator?
+                                    What is the expected shelf life of the SwiftSeal applicator?
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    The SwipeSeal applicator itself has a shelf life of 3 years. The bioactive compounds it dispenses will have their own shelf life according to their specifications, which SwipeSeal is designed to preserve through its non-reactive materials and airtight sealing mechanism.
+                                    The SwiftSeal applicator itself has a shelf life of 3 years. The bioactive compounds it dispenses will have their own shelf life according to their specifications, which SwiftSeal is designed to preserve through its non-reactive materials and airtight sealing mechanism.
                                 </div>
                             </div>
                         </div>
@@ -426,12 +494,12 @@
                         <div class="accordion-item border-0 mb-3 shadow-sm">
                             <h2 class="accordion-header" id="headingThree">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Is SwipeSeal suitable for sterile environments?
+                                    Is SwiftSeal suitable for sterile environments?
                                 </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Yes, SwipeSeal is autoclavable and designed for use in sterile environments. The materials used in its construction can withstand standard sterilization procedures including ethylene oxide, gamma radiation, and autoclave cycles up to 134°C.
+                                    Yes, SwiftSeal is autoclavable and designed for use in sterile environments. The materials used in its construction can withstand standard sterilization procedures including ethylene oxide, gamma radiation, and autoclave cycles up to 134°C.
                                 </div>
                             </div>
                         </div>
@@ -440,12 +508,12 @@
                         <div class="accordion-item border-0 mb-3 shadow-sm">
                             <h2 class="accordion-header" id="headingFour">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    What is the capacity of the SwipeSeal applicator?
+                                    What is the capacity of the SwiftSeal applicator?
                                 </button>
                             </h2>
                             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    The standard SwipeSeal applicator has a capacity of 5ml, with options for both smaller (2ml) and larger (10ml) cartridges depending on the application needs. The modular design allows for quick cartridge replacement during procedures.
+                                    The standard SwiftSeal applicator has a capacity of 5ml, with options for both smaller (2ml) and larger (10ml) cartridges depending on the application needs. The modular design allows for quick cartridge replacement during procedures.
                                 </div>
                             </div>
                         </div>
@@ -454,12 +522,12 @@
                         <div class="accordion-item border-0 shadow-sm">
                             <h2 class="accordion-header" id="headingFive">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    Does SwipeSeal require special training to use?
+                                    Does SwiftSeal require special training to use?
                                 </button>
                             </h2>
                             <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    SwipeSeal is designed with an intuitive interface that requires minimal training. However, we provide comprehensive documentation and video tutorials with each sample. For research institutions, we can also arrange virtual training sessions upon request.
+                                    SwiftSeal is designed with an intuitive interface that requires minimal training. However, we provide comprehensive documentation and video tutorials with each sample. For research institutions, we can also arrange virtual training sessions upon request.
                                 </div>
                             </div>
                         </div>
@@ -474,7 +542,7 @@
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="fw-bold">Request a Sample</h2>
-                <p class="text-muted">Try SwipeSeal in your laboratory!</p>
+                <p class="text-muted">Try SwiftSeal in your laboratory!</p>
             </div>
             
             <div class="row justify-content-center">
@@ -532,14 +600,18 @@
                                     </div>
                                 </div>
 
-                                <div id="warningOther" class="alert alert-warning mb-3 px-2 py-1 d-none">
-                                    Prototype delivery to other countries & regions may be more difficult. Please wait for further confirmation after submitting the form.
+                                <div id="successLocation" class="alert alert-success mb-3 px-2 py-1 d-none">
+                                    Congratulations! The sample will be delivered to your location for free. Please expect around 7 days for the sample to arrive.
+                                </div>
+
+                                <div id="warningLocation" class="alert alert-warning mb-3 px-2 py-1 d-none">
+                                    Sample delivery to other countries & regions may be more difficult. Please wait for further confirmation after submitting the form.
                                 </div>
                                 
                                 <div class="form-check mb-4">
                                     <input class="form-check-input" type="checkbox" id="terms" required>
                                     <label class="form-check-label required" for="terms">
-                                        I understand and agree that my information may be used to deliver, improve, and promote the prototype, but will <strong>not</strong> be used for any other purpose or shared with any third party unless strictly necessary.
+                                        I understand and agree that my information may be used to deliver, improve, or promote SwiftSeal, but will <strong>not</strong> be used for any other purpose or shared with any third party unless strictly necessary.
                                     </label>
                                 </div>
                                 
@@ -557,7 +629,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mb-4 mb-md-0">
-                    <h5>SwipeSeal</h5>
+                    <h5>SwiftSeal</h5>
                     <p class="mb-0">Next-generation adhesive film applicator for efficiency, convenience, and precision.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
@@ -578,7 +650,8 @@
         const postalCodeInput = document.getElementById('postalCode');
         const addressField = document.getElementById('addressField');
         const addressInput = document.getElementById('address');
-        const warningOther = document.getElementById('warningOther');
+        const successLocation = document.getElementById('successLocation');
+        const warningLocation = document.getElementById('warningLocation');
         
         // Initialize form validation based on country
         function updateFormValidation() {
@@ -587,7 +660,8 @@
             // Reset validations
             postalCodeInput.required = false;
             addressInput.required = false;
-            warningOther.classList.add('d-none');
+            successLocation.classList.add('d-none');
+            warningLocation.classList.add('d-none');
             
             if (selectedCountry === 'UK') {
                 postalCodeInput.required = true;
@@ -596,6 +670,8 @@
                 addressField.classList.remove('d-none');
                 document.querySelector('#addressField label').classList.remove("required");
                 document.querySelector('#postalCodeField label').classList.add("required");
+                successLocation.classList.remove('d-none');
+                warningLocation.classList.add('d-none');
             } else if (selectedCountry === 'CN') {
                 postalCodeInput.required = false;
                 addressInput.required = true;
@@ -603,6 +679,8 @@
                 addressField.classList.remove('d-none');
                 document.querySelector('#addressField label').classList.add("required");
                 document.querySelector('#postalCodeField label').classList.remove("required");
+                successLocation.classList.remove('d-none');
+                warningLocation.classList.add('d-none');
             } else if (selectedCountry === 'other') {
                 postalCodeInput.required = false;
                 addressInput.required = true;
@@ -610,7 +688,8 @@
                 addressField.classList.remove('d-none');
                 document.querySelector('#addressField label').classList.add("required");
                 document.querySelector('#postalCodeField label').classList.remove("required");
-                warningOther.classList.remove('d-none');
+                successLocation.classList.add('d-none');
+                warningLocation.classList.remove('d-none');
             }
         }
         
