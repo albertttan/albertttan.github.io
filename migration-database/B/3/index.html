@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>B3</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #1abc9c;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', 'Helvetica Neue', 'Inter', 'Helvetica', 'Segoe UI', 'Arial'/*, 'Noto Sans SC', 'Source Han Sans SC', 'PingFang SC', 'STHeiti', 'SimHei'*/, sans-serif;
+            color: var(--dark-color);
+            scroll-padding-top: 80px;
+        }
+
+        .full-height {
+            height: calc(100vh - 56px);
+            height: calc(100dvh - 56px);
+            margin-top: 56px;
+        }
+
+        .navbar {
+        	height: 56px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .nav-link {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color);
+        }
+
+        arcgis-embedded-map {
+        	height: calc(100vh - 56px);
+        	height: calc(100dvh - 56px);
+        	width: 100%;
+        }
+    </style>
+    <!-- ArcGIS Embed -->
+	<script type="module" src="https://js.arcgis.com/embeddable-components/4.33/arcgis-embeddable-components.esm.js"></script>
+    <!-- Umami Analytics -->
+    <!--<script data-website-id="c78b1615-da26-47f0-b9b2-c1eb114c4733" defer="" src="https://cloud.umami.is/script.js"></script>-->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../../">Migration Database</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../A/">Theme A</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../B/">Theme B</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Contents -->
+    <div class="container full-height">
+        <div class="row">
+            <div class="col-md-6 py-4">
+                <h1 class="display-6 mb-3">Percentage of Welsh Medium Maintained Schools</h1>
+                <p class="lead mb-3">If numbers of language speakers represent the present, numbers of schools and pupils indicate the future.</p>
+                <p class="mb-0"><b>Tags</b>: Theme B; Spatial; Education</p>
+                <p class="mb-0"><b>Time</b>: January 2021</p>
+                <p class="mb-3"><b>Source</b>: <a href="https://www.gov.wales/schools-census-results">Schools' census results</a> by Welsh Government</p>
+                <p class="mb-0"><a href="https://stanford.maps.arcgis.com/apps/mapviewer/index.html?webmap=b846b3e975e04f1aaabe8ebb42532c82">Visit the map</a> · <a href="data.csv">Download the data</a></p>
+            </div>
+            <div class="col-md-6">
+				<arcgis-embedded-map item-id="b846b3e975e04f1aaabe8ebb42532c82" theme="light" legend-enabled share-enabled center="-4.228445200698539,52.40415370323887" scale="2311162.217155" portal-url="https://stanford.maps.arcgis.com" ></arcgis-embedded-map>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
