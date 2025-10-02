@@ -86,8 +86,6 @@ body {
 .banner {
     height: 95vh;
     height: 95dvh;
-    width: 47.5vh;
-    width: 47.5dvh;
     margin-right: 2.5vh;
     margin-right: 2.5dvh;
     padding: 0;
@@ -100,8 +98,6 @@ body {
 .banner-img {
     height: 95vh;
     height: 95dvh;
-    width: 47.5vh;
-    width: 47.5dvh;
 }
 
 .banner-txt {
@@ -113,6 +109,33 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.gallery {
+    height: 95vh;
+    height: 95dvh;
+    margin-right: 2.5vh;
+    margin-right: 2.5dvh;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.5vh;
+    gap: 2.5dvh;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.gallery-img-top {
+    height: 46.25vh;
+    height: 46.25dvh;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.gallery-img-bottom {
+    height: 46.25vh;
+    height: 46.25dvh;
+    grid-column: 1;
+    grid-row: 2;
 }
 
 .intro {
