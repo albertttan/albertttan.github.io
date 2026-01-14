@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Path to UK Universities - Допомога українським студентам</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="c78b1615-da26-47f0-b9b2-c1eb114c4733"></script>
+    <style>
+        :root {
+            --ukraine-blue: #0057B7;
+            --ukraine-yellow: #FFD700;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--ukraine-blue) 0%, #003d82 100%);
+            color: white;
+            padding: 80px 0;
+            margin-bottom: 40px;
+        }
+        
+        .accent-border {
+            border-top: 4px solid var(--ukraine-yellow);
+        }
+
+        .resource-row {
+            display: flex;
+            margin-bottom: 2rem;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .resource-title {
+            width: 20%;
+            background-color: var(--ukraine-blue);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            font-weight: bold;
+            font-size: 1.25rem;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        
+        .resource-blocks-container {
+            width: 80%;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+        
+        .resource-blocks {
+            display: flex;
+            padding: 1rem;
+            gap: 1rem;
+            min-width: min-content;
+        }
+        
+        .resource-block {
+            min-width: 30%;
+            max-width: 30%;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .resource-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .card-title a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        footer a {
+            color: #fff;
+        }
+        
+        @media (max-width: 768px) {
+            .resource-row {
+                flex-direction: column;
+            }
+            
+            .resource-title {
+                width: 100%;
+                padding: 1.5rem;
+            }
+            
+            .resource-blocks-container {
+                width: 100%;
+            }
+        }
+        
+        .question-card {
+            border-left: 4px solid var(--ukraine-blue);
+        }
+        
+        .submit-question {
+            background-color: var(--ukraine-blue);
+            border: none;
+        }
+        
+        .submit-question:hover {
+            background-color: #003d82;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">🎓 Your Path to UK Universities</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resources">Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">Questions</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Warning 
+    <p class="alert alert-danger text-center m-0 p-2">The page is a work in progress.</p>-->
+
+    <div class="hero-section accent-border">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">Your Path to UK Universities</h1>
+                    <h2 class="h4 mb-4">Ваш шлях до університетів Великої Британії</h2>
+                    <p class="lead mb-4">Welcome! This guide is designed to help Ukrainian students in the UK navigate the university application process. Find resources, answers to common questions, and support for your educational journey.</p>
+                    <p class="small">The page will be updated constantly.<br>Last update: 2026-01-14</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5" id="resources">
+        <h2 class="text-center mb-4">Essential Resources & Opportunities</h2>
+
+        <!-- Application Row -->
+        <div class="resource-row">
+            <div class="resource-title">📝<br>Application</div>
+            <div class="resource-blocks-container">
+                <div class="resource-blocks">
+                    <div class="card resource-block" onclick="window.open('https://www.ucas.com/', '_blank')">
+                        <h5 class="card-title mb-2"><a href="https://www.ucas.com/", target="_blank">📃<br>Official UCAS Portal</a></h5>
+                        <p class="mb-0">The main application portal. Create an account to submit applications.</p>
+                    </div>
+                    <div class="card resource-block" onclick="window.open('ucas-demo/', '_blank')">
+                        <h5 class="card-title mb-2"><a href="ucas-demo/", target="_blank">📜<br>Mock UCAS Portal</a></h5>
+                        <p class="mb-0">Familiarize yourself with the UCAS interface before you start a real application.</p>
+                    </div>
+                    <div class="card resource-block" onclick="window.open('https://www.ucas.com/applying/applying-to-university/dates-and-deadlines-for-uni-applications', '_blank')">
+                        <h5 class="card-title mb-2"><a href="https://www.ucas.com/applying/applying-to-university/dates-and-deadlines-for-uni-applications", target="_blank">📅<br>Dates and Deadlines</a></h5>
+                        <p class="mb-0">Important deadlines and dates for the UK university application cycle.</p>
+                    </div>
+                    <div class="card resource-block" onclick="window.open('https://www.ucas.com/applying/applying-to-university/writing-your-personal-statement', '_blank')">
+                        <h5 class="card-title mb-2"><a href="https://www.ucas.com/applying/applying-to-university/writing-your-personal-statement", target="_blank">✍️<br>Personal Statement</a></h5>
+                        <p class="mb-0">Official tips and guidance for writing strong personal statements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Resources Row -->
+        <div class="resource-row">
+            <div class="resource-title">📚<br>Resources</div>
+            <div class="resource-blocks-container">
+                <div class="resource-blocks">
+                    <div class="card resource-block" onclick="window.open('https://digital.ucas.com/coursedisplay/results/courses', '_blank')">
+                        <h5 class="card-title mb-2"><a href="https://digital.ucas.com/coursedisplay/results/courses", target="_blank">🏫<br>University Search</a></h5>
+                        <p>Explore different universities, courses, and find the right fit for your goals.</p>
+                    </div>
+                    <div class="card resource-block" onclick="window.open('', '_blank')">
+                        <h5 class="card-title mb-2">🧑‍🏫<br>Open University</h5>
+                        <p>Free online courses offered the Open University specifically for Ukrainians.</p>
+                    </div>
+                    <div class="card resource-block" onclick="window.open('https://takeielts.britishcouncil.org/', '_blank')">
+                        <h5 class="card-title mb-2"><a href="https://takeielts.britishcouncil.org/">📚<br>IELTS Tests</a></h5>
+                        <p>Information about meeting the English requirements for admission.</p>
+                    </div>
+                    <div class="card resource-block" onclick="window.open('https://www.reuk.org/hefaq', '_blank')">
+                        <h5 class="card-title mb-2"><a href="https://www.reuk.org/hefaq", target="_blank">🤝<br>Refugee Education UK</a></h5>
+                        <p>An organization that might support you and your university studies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Funding Row -->
+        <div class="resource-row">
+            <div class="resource-title">💰<br>Funding</div>
+            <div class="resource-blocks-container">
+                <div class="resource-blocks">
+                    <div class="card resource-block" onclick="window.open('https://www.studentfinancewales.co.uk/', '_blank')">
+                        <h5 class="card-title mb-2"><a href="https://www.studentfinancewales.co.uk/">🏴󠁧󠁢󠁷󠁬󠁳󠁿<br>Student Finance Wales</a></h5>
+                        <p>Official government student loans to cover tuition fees and living costs.</p>
+                    </div>
+                    <div class="card resource-block" onclick="window.open('https://star-network.org.uk/access-to-university/scholarships/list/', '_blank')">
+                        <h5 class="card-title mb-2"><a href="https://www.studentfinancewales.co.uk/">✨<br>STAR Scholarships</a></h5>
+                        <p>List of currently available migrant scholarships updated by the <abbr title="Student Action for Refugees">STAR</abbr> Network.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5" id="faq">
+        <h2 class="text-center mb-4">Common Questions & Answers</h2>
+        
+        <div class="accordion mb-4" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
+                        When should I start my university application?
+                    </button>
+                </h2>
+                <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body question-card">
+                        Most UK universities accept applications through UCAS starting in September for courses beginning the following September or October. Key deadline for most courses is January 15th, though Oxbridge and medicine/dentistry deadlines are October 15th. It's best to start preparing your application in the summer before your final year.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4">
+                        What financial support is available?
+                    </button>
+                </h2>
+                <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body question-card">
+                        If you have settled or pre-settled status under the Ukraine schemes, you may be eligible for home fee status and student finance (tuition fee loans and maintenance loans). Many universities also offer specific scholarships for Ukrainian students. Additionally, there are charitable organizations providing support.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5">
+                        Can I get help with my personal statement?
+                    </button>
+                </h2>
+                <div id="q5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body question-card">
+                        Yes! Your school or college should provide support. Additionally, many Ukrainian community organizations in the UK offer mentoring. The UCAS website has extensive guidance, and some universities offer pre-application workshops. Remember to be authentic and share your unique perspective and experiences.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title mb-3">Have Another Question?</h3>
+                <p class="text-muted">We'll connect your questions to a trustworthy contact and add the answers to our FAQ.<br>
+                <b>After you click "Submit", you'll be redirected to a email draft. Please send the email without modifying the contents.</b></p>
+                <form
+                    action="mailto:a24ytan@uwcatlantic.com,a24ywang@uwcatlantic.org,a24txia@uwcatlantic.org?cc=emilia.pool-illsley@uwcatlantic.org&subject=Ukrainian University Guidance Inquiry"
+                    method="post"
+                    enctype="text/plain"
+                >
+                    <div class="mb-3">
+                        <label for="language" class="form-label">Language</label><br>
+                        <select id="language" class="form-control" name="lang">
+                            <option value="English">English</option>
+                            <option value="Ukrainian">Ukrainian</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label><br>
+                        <textarea id="message" class="form-control" rows="3" name="question" placeholder="Enter your question here" required></textarea>
+                    </div>
+                    <button type="submit" class="btn submit-question text-white">Submit</button>
+                </form>
+                <!--<div id="successMessage" class="alert alert-success mt-3" style="display: none;">Thank you! Your question has been submitted and will be reviewed.</div>-->
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <h5>Your Path to UK Universities</h5>
+                    <p class="small">Part of a collaborative intervention in <a href="https://uwcatlantic.org">UWC Atlantic</a>'s <a href="https://www.ibo.org/globalassets/new-structure/programmes/dp/pdfs/dp_uwc-atlantic-ib_subjectbrief_en.pdf">Systems Transformation Pathways</a> pilot course<br>Contact us: <a href="mailto:a24ytan@uwcatlantic.com,a24ywang@uwcatlantic.org,a24txia@uwcatlantic.org?cc=emilia.pool-illsley@uwcatlantic.org">Email</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('questionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const question = document.getElementById('question').value;
+            if (question.trim()) {
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('questionForm').reset();
+                
+                setTimeout(function() {
+                    document.getElementById('successMessage').style.display = 'none';
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>
