@@ -23,6 +23,16 @@
             border-top: 4px solid var(--ukraine-yellow);
         }
 
+        .slide-block {
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .slide-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
         .resource-row {
             display: flex;
             margin-bottom: 2rem;
@@ -142,8 +152,26 @@
                     <h1 class="display-4 fw-bold mb-3">Your Path to UK Universities</h1>
                     <h2 class="h4 mb-4">Ваш шлях до університетів Великої Британії</h2>
                     <p class="lead mb-4">Welcome! This guide is designed to help Ukrainian students in the UK navigate the university application process. Find resources, answers to common questions, and support for your educational journey.</p>
-                    <p class="small">The page will be updated regularly.<br>Last update: 2026-01-17</p>
+                    <p class="small">The page will be updated regularly.<br>Last update: 2026-01-21</p>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5" id="slides">
+        <h2 class="text-center mb-4">Information Session Slides</h2>
+        <div class="row" style="margin: 0; gap: 1rem;">
+            <div class="col-lg card slide-block" onclick="window.open('static/presentation-1.pdf', '_blank')">
+                <h5 class="card-title mb-2"><a href="static/presentation-1.pdf", target="_blank">Vicki</a></h5>
+                <p class="mb-0"><img src="static/uwcac.svg" height=25></p>
+            </div>
+            <div class="col-lg card slide-block" onclick="window.open('static/presentation-2.pdf', '_blank')">
+                <h5 class="card-title mb-2"><a href="static/presentation-2.pdf", target="_blank">Huw</a></h5>
+                <p class="mb-0"><img src="static/refugee-education-uk.png" height=25></p>
+            </div>
+            <div class="col-lg card slide-block" onclick="window.open('static/presentation-3.pdf', '_blank')">
+                <h5 class="card-title mb-2"><a href="static/presentation-3.pdf", target="_blank">Yustyna</a></h5>
+                <p class="mb-0"><img src="static/prifysgol-caerdydd.svg" height=25> Cardiff University</p>
             </div>
         </div>
     </div>
