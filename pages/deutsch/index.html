@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Deutsch Üben</title>
+<title>Practice German</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 <link href="styles.css" rel="stylesheet">
 </head>
@@ -14,7 +14,7 @@
 <div class="container" style="max-width:640px; display:none;" id="appRoot">
 
   <header class="pt-4 pb-2 d-flex justify-content-between align-items-center">
-    <h1 class="brand h4 mb-0">Deutsch<span class="dot">.</span>üben</h1>
+    <h1 class="brand h4 mb-0">Practice German</h1>
     <span class="score-pill" id="scorePill">0 / 0</span>
   </header>
 
@@ -56,7 +56,6 @@
         <button class="btn btn-ink" id="checkBtn">Check</button>
       </div>
       <p class="muted small mt-4" id="verbMissingNote"></p>
-      <p class="muted small">Conjugations are looked up live from <code>verbs_db</code> (~8,400 verbs) — nothing is precomputed or guessed.</p>
     </div>
 
     <!-- ADJ & NOUNS -->
@@ -91,7 +90,6 @@
         <button class="btn btn-ink" id="adjCheckBtn">Check</button>
       </div>
       <p class="muted small mt-4" id="nounMissingNote"></p>
-      <p class="muted small">Noun gender + case/plural forms are looked up live from <code>nouns_db</code> (~88,500 nouns). Article and adjective-ending choice follow the standard strong/weak/mixed declension rules.</p>
     </div>
 
     <!-- MISTAKES -->
@@ -498,18 +496,18 @@ return {getVerbInfo, getPartizip2, alwaysUsesSein, getConjugation};
   function addMistake(entry){
     var list = loadMistakes();
     entry.id = Date.now().toString(36)+Math.random().toString(36).slice(2);
-    entry.status = "fresh";
+    entry.status = "new";
     list.unshift(entry);
     if (list.length>300) list = list.slice(0,300);
     saveMistakes(list); renderMistakes();
     return entry.id;
   }
-  /* correct reattempt: fresh -> reviewed, reviewed -> removed. returns nothing */
+  /* correct reattempt: new -> reviewed, reviewed -> removed. returns nothing */
   function promoteMistake(id){
     var list = loadMistakes();
     var idx = list.findIndex(function(m){ return m.id===id; });
     if (idx===-1) return;
-    if (list[idx].status==="fresh"){ list[idx].status="reviewed"; }
+    if (list[idx].status==="new"){ list[idx].status="reviewed"; }
     else { list.splice(idx,1); }
     saveMistakes(list); renderMistakes();
   }
@@ -520,12 +518,12 @@ return {getVerbInfo, getPartizip2, alwaysUsesSein, getConjugation};
     list[idx].given = given;
     saveMistakes(list); renderMistakes();
   }
-  /* rolls each mistake of the given type independently (fresh: 1/10, reviewed: 1/20); returns one triggered entry or null */
+  /* rolls each mistake of the given type independently (new: 1/10, reviewed: 1/20); returns one triggered entry or null */
   function pickMistakeCandidate(type){
     var pool = loadMistakes().filter(function(m){ return m.type===type; });
     var candidates = [];
     pool.forEach(function(m){
-      var p = m.status==="fresh" ? 0.1 : 0.05;
+      var p = m.status==="new" ? 0.1 : 0.05;
       if (Math.random() < p) candidates.push(m);
     });
     return candidates.length ? candidates[Math.floor(Math.random()*candidates.length)] : null;
@@ -640,16 +638,14 @@ return {getVerbInfo, getPartizip2, alwaysUsesSein, getConjugation};
 
   var CASES_ALL = ["N","G","D","A"];
   var CASE_LABEL = {N:"N – 1",G:"G – 2",D:"D – 3",A:"A – 4"};
-  var CASE_GLOSS = {N:"",A:"",G:"of ",D:"to/for "};
+  var CASE_GLOSS = {N:"",A:"",G:"of ",D:"to "};
   var STRONG = {m:{N:"er",G:"en",D:"em",A:"en"}, f:{N:"e",G:"er",D:"er",A:"e"}, n:{N:"es",G:"en",D:"em",A:"es"}, pl:{N:"e",G:"er",D:"en",A:"e"}};
   var WEAK   = {m:{N:"e", G:"en",D:"en",A:"en"}, f:{N:"e",G:"en",D:"en",A:"e"}, n:{N:"e", G:"en",D:"en",A:"e"}, pl:{N:"en",G:"en",D:"en",A:"en"}};
   var MIXED  = {m:{N:"er",G:"en",D:"en",A:"en"}, f:{N:"e",G:"en",D:"en",A:"e"}, n:{N:"es",G:"en",D:"en",A:"es"}, pl:{N:"en",G:"en",D:"en",A:"en"}};
   var DET_ENDINGS = {m:{N:"er",G:"es",D:"em",A:"en"}, f:{N:"e",G:"er",D:"er",A:"e"}, n:{N:"es",G:"es",D:"em",A:"es"}, pl:{N:"e",G:"er",D:"en",A:"e"}};
   var DEFINITE_TABLE = { m:{N:"der",G:"des",D:"dem",A:"den"}, f:{N:"die",G:"der",D:"der",A:"die"}, n:{N:"das",G:"des",D:"dem",A:"das"}, pl:{N:"die",G:"der",D:"den",A:"die"} };
   var DER_WORDS = [ {name:"der",irregular:true,gloss:{sg:"the",pl:"the"}}, {name:"dieser",stem:"dies",gloss:{sg:"this",pl:"these"}},
-    {name:"jeder",stem:"jed",singularOnly:true,gloss:{sg:"every",pl:"every"}}, {name:"welcher",stem:"welch",gloss:{sg:"which",pl:"which"}},
-    {name:"jener",stem:"jen",gloss:{sg:"that",pl:"those"}}, {name:"mancher",stem:"manch",gloss:{sg:"many a",pl:"some"}},
-    {name:"solcher",stem:"solch",gloss:{sg:"such a",pl:"such"}}, {name:"alle",stem:"all",pluralOnly:true,gloss:{sg:"all",pl:"all"}} ];
+    {name:"jeder",stem:"jed",singularOnly:true,gloss:{sg:"every",pl:"every"}}, {name:"welcher",stem:"welch",gloss:{sg:"which",pl:"which"}}, {name:"mancher",stem:"manch",gloss:{sg:"many a",pl:"some"}}, {name:"alle",stem:"all",pluralOnly:true,gloss:{sg:"all",pl:"all"}} ];
   var EIN_WORDS = [ {name:"ein",stem:"ein",singularOnly:true,gloss:{sg:"a",pl:""}}, {name:"kein",stem:"kein",gloss:{sg:"no",pl:"no"}},
     {name:"mein",stem:"mein",gloss:{sg:"my",pl:"my"}}, {name:"dein",stem:"dein",gloss:{sg:"your",pl:"your"}}, {name:"sein",stem:"sein",gloss:{sg:"his",pl:"his"}},
     {name:"ihr",stem:"ihr",gloss:{sg:"her",pl:"her"}}, {name:"unser",stem:"unser",gloss:{sg:"our",pl:"our"}}, {name:"euer",stem:"eur",gloss:{sg:"your",pl:"your"}},
@@ -729,7 +725,7 @@ return {getVerbInfo, getPartizip2, alwaysUsesSein, getConjugation};
       if (isPlural) nounEn = pluralizeEn(nounEn);
       var detGlossWord = det.cat==="none" ? "" : det.entry.gloss[numberKey];
       detGlossWord = articleFor(detGlossWord, adjEn);
-      phrase = cap(CASE_GLOSS[caseKey] + (detGlossWord?detGlossWord+" ":"") + adjEn + " " + nounEn);
+      phrase = CASE_GLOSS[caseKey] + (detGlossWord?detGlossWord+" ":"") + adjEn + " " + nounEn;
       mistakeId = null;
     }
 
