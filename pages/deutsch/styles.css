@@ -36,8 +36,11 @@
   .tag-tense-past{ background:#c8a279; color:#3a2410; }
   .tag-tense-perfect{ background:#7d5330; color:#ffffff; }
   .tag-num-sg{ background:#e3e3e0; color:#4a4a46; }
-  .tag-num-pl{ background:var(--accent-soft); color:var(--accent); }
-  .tag-new{ background:#f6d9d5; color:#8a2f22; }
-  .tag-reviewed{ background:#f5e6ad; color:#7a6414; }
+  .tag-num-pl{ background:rgb(211,88,94); color:#ffffff; }
   .mistakes-row.new{ border-left:3px solid #c0392b; padding-left:.6rem; }
   .mistakes-row.reviewed{ border-left:3px solid #c9a417; padding-left:.6rem; }
+  .tag-gender-m{ background:rgb(118,168,116); color:#ffffff; }
+  .tag-gender-n{ background:rgb(122,84,150); color:#ffffff; }
+  .tag-gender-f{ background:rgb(221,148,80); color:#ffffff; }
+  .tag-prep{ background:#e3e3e0; color:#4a4a46; }
+  .tag-noun-hint{ background:#e3e3e0; color:#4a4a46; }
