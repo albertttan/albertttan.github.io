@@ -868,28 +868,36 @@
         <td>round, approximately (numbers)</td>
     </tr>
 </table>
+<style>
+  /* Hidden state: the cell keeps its size (so it stays clickable) but its content is invisible */
+  table.table td.cell-hidden {
+    color: transparent;
+    background: #ddd;
+    cursor: pointer;
+    user-select: none;
+  }
+  table.table td.cell-hidden * {
+    visibility: hidden;
+  }
+</style>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll("table.table").forEach(function (table) {
-      // Shuffle body rows if a <tbody> exists, otherwise use the table's rows
-      var tbody = table.tBodies[0] || table;
-      var rows = Array.from(tbody.rows).filter(function (row) {
-        // Keep header rows (those inside <thead> or containing only <th>) in place
-        return row.parentNode.tagName !== "THEAD" &&
-               !Array.from(row.cells).every(function (c) { return c.tagName === "TH"; });
+      // Hide every data cell in the 2nd column (header <th> cells stay visible)
+      Array.from(table.rows).forEach(function (row) {
+        var cell = row.cells[1];
+        if (cell && cell.tagName === "TD") {
+          cell.classList.add("cell-hidden");
+        }
       });
 
-      // Fisher-Yates shuffle
-      for (var i = rows.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var tmp = rows[i];
-        rows[i] = rows[j];
-        rows[j] = tmp;
-      }
-
-      // Re-append rows in their new order
-      rows.forEach(function (row) {
-        tbody.appendChild(row);
+      // One click listener per table: clicking a hidden cell reveals it
+      table.addEventListener("click", function (event) {
+        var cell = event.target.closest("td.cell-hidden");
+        if (cell && table.contains(cell)) {
+          cell.classList.remove("cell-hidden");
+        }
       });
     });
   });
